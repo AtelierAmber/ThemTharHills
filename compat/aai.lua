@@ -39,7 +39,7 @@ if mods["space-exploration"] then
     rm.ReplaceIngredient("se-energy-beam-defence", "copper-plate", "advanced-cable", 200, 200)
   end
 
-  if settings.startup["themtharhills-se-maintenance"].value and ((not mods["IfNickel"]) or (mods["IfNickel"] and not (data.raw.item["nickel-electromagnet"] and settings.startup["ifnickel-se-maintenance"].value))) then
+  if settings.startup["themtharhills-se-maintenance"].value and ((not mods["IfNickel-Updated"]) or (mods["IfNickel-Updated"] and not (data.raw.item["nickel-electromagnet"] and settings.startup["ifnickel-se-maintenance"].value))) then
     local function add_catalyst(recipe, ingredient, amount, losschance, scrap, scrap_amount)
       rm.AddIngredient(recipe, ingredient, amount, amount)
       rm.AddProductRaw(recipe, {type="item", name=ingredient, amount=amount, probability=1.0 - losschance, catalyst_amount=amount})

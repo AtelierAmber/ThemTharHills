@@ -39,7 +39,7 @@ data:extend({
     energy_required = 3,
     localised_name = {"recipe-name.trace-gold-from-copper"},
     ingredients = {{"copper-ore", 3}, {type="fluid", name=parts.aquaregia and "aqua-regia" or "nitric-acid", amount=30}},
-    results = {{type="item", name="gold-powder", amount=1}, mods["IfNickel"] and {type="item", name="nickel-ore", amount=1, probability=0.25} or nil},
+    results = {{type="item", name="gold-powder", amount=1}, mods["IfNickel-Updated"] and {type="item", name="nickel-ore", amount=1, probability=0.25} or nil},
     main_product = "gold-powder",
     always_show_products = true,
     crafting_machine_tint = {

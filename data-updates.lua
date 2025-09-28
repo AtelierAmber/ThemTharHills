@@ -302,7 +302,7 @@ if mods["LunarLandings"] then
   rm.ReplaceIngredient("ll-blank-data-card", "ll-silicon", "integrated-circuit", 10, 10)
   rm.RemoveProduct("ll-broken-data-card-recycling", "advanced-circuit", 1)
 
-  if not (mods["BrassTacks"] or mods["IfNickel"]) then
+  if not (mods["BrassTacks"] or mods["IfNickel-Updated"]) then
     rm.AddIngredient("ll-core-extractor", "electric-engine-unit", 5, 5)
     rm.AddIngredient("ll-low-grav-assembling-machine", "electric-engine-unit", 2, 2)
   end
