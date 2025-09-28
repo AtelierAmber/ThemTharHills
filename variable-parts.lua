@@ -5,7 +5,7 @@ if mods["BrassTacks-Updated"] and settings.startup["brasstacks-experimental-inte
   parts.heavyGyro = true
 end
 
-parts.aquaregia  = settings.startup["themtharhills-enable-aqua-regia"].value and (mods["Krastorio2"] or mods["bzchlorine"]) and not (mods["Krastorio2"] and mods["bztungsten"] and mods["BrimStuff"] and mods["FreightForwarding"])
+parts.aquaregia  = settings.startup["themtharhills-enable-aqua-regia"].value and (mods["Krastorio2"] or mods["bzchlorine"]) and not (mods["Krastorio2"] and mods["bztungsten"] and mods["BrimStuff-Updated"] and mods["FreightForwarding"])
 
 function parts.preferred(ingredients, quantities)
   for k, v in ipairs(ingredients) do

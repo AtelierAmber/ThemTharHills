@@ -58,7 +58,7 @@ if mods["Krastorio2"] then
     tf.addPrereq("kr-electric-mining-drill-mk2", "high-voltage-equipment")
   end
 
-  if not mods["LasingAround"] then
+  if not mods["LasingAround-Updated"] then
     rm.ReplaceIngredient("kr-advanced-splitter", "advanced-circuit", "integrated-circuit", 2)
   end
   rm.ReplaceProportional("kr-small-roboport", "electronic-components", "integrated-circuit", 1)

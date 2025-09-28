@@ -5,7 +5,7 @@ local parts = require("variable-parts")
 local goldships = true
 
 if mods["FreightForwarding"] then
-  if mods["BrimStuff"] then
+  if mods["BrimStuff-Updated"] then
     --gold processable without oil
     rm.AddIngredient("ff-transport-science-pack", "transceiver", 1)
     tf.addPrereq("ff-transport-science-pack", "gold-electronics")
@@ -26,7 +26,7 @@ end
 
 if mods["cargo-ships"] and goldships then
   --if oil is water-only, need an early source of nitric acid to make transceivers for boats.
-  if (not settings.startup["no_oil_on_land"].value) or mods["BrimStuff"] or mods["Krastorio2"] then
+  if (not settings.startup["no_oil_on_land"].value) or mods["BrimStuff-Updated"] or mods["Krastorio2"] then
     rm.ReplaceIngredient("buoy", "iron-plate", parts.wire, 1)
     rm.ReplaceIngredient("chain_buoy", "iron-plate", parts.wire, 1)
 

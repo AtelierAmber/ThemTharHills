@@ -24,7 +24,7 @@ if data.raw.item["pcb-solder"] then
 end
 
 if data.raw.fluid["hydrogen-chloride"] and not parts.aquaregia then
-  if (mods["Krastorio2"] and mods["bztungsten"] and mods["BrimStuff"] and mods["FreightForwarding"]) then
+  if (mods["Krastorio2"] and mods["bztungsten"] and mods["BrimStuff-Updated"] and mods["FreightForwarding"]) then
     rm.SetCategory("gold-powder", "basic-chemistry")
     rm.SetCategory("trace-gold-from-copper", "basic-chemistry")
   else
@@ -40,7 +40,7 @@ if mods["Krastorio2"] and not mods["bzchlorine"] and (rm.CheckIngredient("gold-p
   tf.addRecipeUnlock("kr-fluids-chemistry", "hydrogen-chloride")
 end
 
-if (mods["Krastorio2"] and mods["bztungsten"] and mods["FreightForwarding"]) and not (mods["BrimStuff"] or mods["bzgas"]) then
+if (mods["Krastorio2"] and mods["bztungsten"] and mods["FreightForwarding"]) and not (mods["BrimStuff-Updated"] or mods["bzgas"]) then
   rm.RemoveIngredient("chemical-plant", "tungsten-plate", 99999)
   rm.RemoveIngredient("chemical-plant", "copper-tungsten", 99999)
   rm.RemoveIngredient("chemical-plant", "tungsten-carbide", 99999)
@@ -68,7 +68,7 @@ else
   if data.raw.fluid["epoxy"] then
     rm.ReplaceIngredient("integrated-circuit", "plastic-bar", "epoxy", 2)
     rm.SetCategory("integrated-circuit", "crafting-with-fluid")
-  else if mods["LasingAround"] then
+  else if mods["LasingAround-Updated"] then
     data.raw.recipe["integrated-circuit"].lasermill = {helium=5, convert=true, se_variant="space-crafting", se_tooltip_entity="se-space-assembling-machine", type="circuit"}
     tf.addPrereq("advanced-electronics-2", "laser-mill")
   end end

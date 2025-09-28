@@ -125,7 +125,7 @@ if mods["Krastorio2"] or mods["bzgold"] or mods["bzchlorine"] then
   cu.moveRecipe("cpu", "fiddly-electrical-gubbins", "h")
   cu.moveRecipe("cpu-holmium", "fiddly-electrical-gubbins", "i")
 
-  if not mods["IfNickel"] then
+  if not mods["IfNickel-Updated"] then
     cu.moveItem("spark-plug", "fiddly-electrical-gubbins", "b")
     cu.moveRecipe("spark-plug", "fiddly-electrical-gubbins", "b")
   end
