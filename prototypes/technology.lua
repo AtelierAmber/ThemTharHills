@@ -104,7 +104,7 @@ data:extend({
 })
 
 if mods["LunarLandings"] then
-  if not mods["BrassTacks"] then
+  if not mods["BrassTacks-Updated"] then
     data:extend({
       {
             type = "technology",

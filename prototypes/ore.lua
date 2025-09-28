@@ -70,7 +70,7 @@ data:extend({
   }
 })
 
-if mods["LunarLandings"] and not mods["BrassTacks"] then
+if mods["LunarLandings"] and not mods["BrassTacks-Updated"] then
   data:extend({
     {
       type = "resource",

@@ -460,7 +460,7 @@ if mods["FreightForwarding"] then
 end
 
 if mods["LunarLandings"] then
-  if not mods["BrassTacks"] then
+  if not mods["BrassTacks-Updated"] then
     data:extend({
       {
         type = "recipe",

@@ -18,7 +18,7 @@ script.on_configuration_changed(
 script.on_init(
   function()
     local luna = game.surfaces["luna"]
-    if game.active_mods["LunarLandings"] and (not game.active_mods["BrassTacks"]) and luna then
+    if game.active_mods["LunarLandings"] and (not game.active_mods["BrassTacks-Updated"]) and luna then
       local cheese_settings = game.surfaces.nauvis.map_gen_settings.autoplace_controls["cheese-ore"]
       local mgs = luna.map_gen_settings
       mgs.autoplace_controls["cheese-ore"] = cheese_settings

@@ -1,7 +1,7 @@
 local parts = {}
 
 parts.heavyGyro = false
-if mods["BrassTacks"] and settings.startup["brasstacks-experimental-intermediates"].value and (settings.startup["brasstacks-gyro-override"].value or not mods["bzsilicon"]) then
+if mods["BrassTacks-Updated"] and settings.startup["brasstacks-experimental-intermediates"].value and (settings.startup["brasstacks-gyro-override"].value or not mods["bzsilicon"]) then
   parts.heavyGyro = true
 end
 

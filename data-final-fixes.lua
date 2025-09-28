@@ -69,7 +69,7 @@ end
 if mods["LunarLandings"] then
   --LL hard-overrides the satellite recipe in DFF.
   rm.ReplaceIngredient("satellite", "advanced-circuit", "transceiver", 20, 20)
-  if not mods["BrassTacks"] then
+  if not mods["BrassTacks-Updated"] then
     tf.addRecipeUnlock("lunar-cheese-exploitation", "cheese-ore-processing-heat")
     data.raw.recipe["cheese-ore-processing-heat"].enabled = false
   end

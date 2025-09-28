@@ -110,7 +110,7 @@ else
   rm.AddIngredient("beacon", "advanced-cable", 5, 5)
 end
 
-if mods["BrassTacks"] and rm.CheckIngredient("advanced-cable", "silver-wire") then
+if mods["BrassTacks-Updated"] and rm.CheckIngredient("advanced-cable", "silver-wire") then
   --more copper demand = more silver byproduct
   rm.AddIngredient("advanced-cable", "silver-wire", 1, 2)
 end
@@ -283,7 +283,7 @@ if mods["LunarLandings"] then
 
   rm.RemoveIngredient("processing-unit", "ll-silicon", 99999, 99999) --already an ingredient of integrated circuits.
 
-  if not mods["BrassTacks"] then
+  if not mods["BrassTacks-Updated"] then
     rm.AddIngredient("ll-low-grav-assembling-machine", "hv-power-regulator", 2, 2)
     rm.RemoveIngredient("ll-low-grav-assembling-machine", "advanced-circuit", 10, 10)
   end
@@ -302,12 +302,12 @@ if mods["LunarLandings"] then
   rm.ReplaceIngredient("ll-blank-data-card", "ll-silicon", "integrated-circuit", 10, 10)
   rm.RemoveProduct("ll-broken-data-card-recycling", "advanced-circuit", 1)
 
-  if not (mods["BrassTacks"] or mods["IfNickel-Updated"]) then
+  if not (mods["BrassTacks-Updated"] or mods["IfNickel-Updated"]) then
     rm.AddIngredient("ll-core-extractor", "electric-engine-unit", 5, 5)
     rm.AddIngredient("ll-low-grav-assembling-machine", "electric-engine-unit", 2, 2)
   end
 
-  if mods["BrassTacks"] then
+  if mods["BrassTacks-Updated"] then
     rm.RemoveProduct("cheese-ore-processing", "zinc-ore", 5, 5)
     rm.AddProductRaw("cheese-ore-processing", {type="item", name="gold-ore", amount=5})
   end
