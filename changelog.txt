@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.9
+Date: ????
+  Changes:
+---------------------------------------------------------------------------------------------------
 Version: 1.0.8
   Compatibility:
     - Corrected a reference to a removed icon for compatibility with Lunar Landings.
