@@ -4,21 +4,21 @@ local rm = require("recipe-modify")
 local cu = require("category-utils")
 
 if mods["bzgold"] then
-  rm.RemoveIngredient("satellite", "gold-ingot", 99999, 99999)
+  rm.RemoveIngredient("satellite", "gold-ingot", 99999)
   rm.ReplaceProportional("cpu", "gold-ingot", parts.gold, 1)
   rm.ReplaceProportional("mainboard", "gold-ingot", parts.gold, 1)
 
   --small amount relative to cost of ICs but idk
-  rm.RemoveIngredient("cpu", "silicon-wafer", 10, 10)
-  rm.RemoveIngredient("cpu", "silicon", 5, 5)
+  rm.RemoveIngredient("cpu", "silicon-wafer", 10)
+  rm.RemoveIngredient("cpu", "silicon", 5)
 
   if rm.CheckIngredient("rocket-control-unit", "temperature-sensor") and data.raw.item["gimbaled-thruster"] then
     --rcu is getting a bit overcrowded and the temp sensor should be in the part of the rocket that might plausibly overheat anyway
-    rm.RemoveIngredient("rocket-control-unit", "temperature-sensor", 99999, 99999)
+    rm.RemoveIngredient("rocket-control-unit", "temperature-sensor", 99999)
     if mods["space-exploration"] then
-      rm.AddIngredient("gimbaled-thruster", "temperature-sensor", 1, 1)
+      rm.AddIngredient("gimbaled-thruster", "temperature-sensor", 1)
     else
-      rm.AddIngredient("gimbaled-thruster", "temperature-sensor", 2, 2)
+      rm.AddIngredient("gimbaled-thruster", "temperature-sensor", 2)
     end
   end
 
@@ -53,11 +53,11 @@ if mods["bzgold"] then
     tf.removePrereq("palladium-processing", "se-rocket-science-pack")
     tf.addPrereq("palladium-processing", "chemical-science-pack")
     if data.raw.item["silver-wire"] then
-      rm.ReplaceIngredient("advanced-cable", parts.wire, "silver-wire", 4, 8)
+      rm.ReplaceIngredient("advanced-cable", parts.wire, "silver-wire", 4)
     else if data.raw.item["tinned-cable"] then --i should look into how much sense this makes
-      rm.ReplaceIngredient("advanced-cable", parts.wire, "tinned-cable", 4, 8)
+      rm.ReplaceIngredient("advanced-cable", parts.wire, "tinned-cable", 4)
     else
-      rm.ReplaceIngredient("advanced-cable", parts.wire, "copper-cable", 4, 8)
+      rm.ReplaceIngredient("advanced-cable", parts.wire, "copper-cable", 4)
     end end
 
     tf.removeRecipeUnlock("se-space-data-card", "se-empty-data-gold")

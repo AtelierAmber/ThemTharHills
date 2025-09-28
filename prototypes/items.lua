@@ -2,21 +2,21 @@ local parts = require("variable-parts")
 
 local stacksize_override = nil
 if mods["Krastorio2"] then
-  stacksize_override = tonumber(settings.startup["kr-stack-size"].value)
+  --stacksize_override = tonumber(settings.startup["kr-stack-size"].value)
 end
 
 data:extend({
   {
     type = "item",
     name = "gold-ore",
-    icon = "__ThemTharHills__/graphics/icons/gold-ore.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/gold-ore.png",
     icon_size = 64, icon_mipmaps = 4,
     pictures =
         {
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/gold-ore.png",   scale = 0.25, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/gold-ore-1.png", scale = 0.25, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/gold-ore-2.png", scale = 0.25, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/gold-ore-3.png", scale = 0.25, mipmap_count = 4 }
+          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore.png",   scale = 0.25, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore-1.png", scale = 0.25, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore-2.png", scale = 0.25, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore-3.png", scale = 0.25, mipmap_count = 4 }
         },
     subgroup = "raw-resource",
     order = "j",
@@ -26,7 +26,7 @@ data:extend({
   {
     type = "item",
     name = "gold-powder",
-    icon = "__ThemTharHills__/graphics/icons/gold-powder.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/gold-powder.png",
     icon_size = 64,
     subgroup = "raw-resource",
     order = "ja",
@@ -36,7 +36,7 @@ data:extend({
   {
     type = "item",
     name = parts.gold,
-    icon = "__ThemTharHills__/graphics/icons/gold-plate.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/gold-plate.png",
     icon_size = 64,
     subgroup = "raw-material",
     order = "h",
@@ -46,7 +46,7 @@ data:extend({
   {
     type = "item",
     name = parts.wire,
-    icon = "__ThemTharHills__/graphics/icons/gold-wire.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/gold-wire.png",
     icon_size = 64,
     subgroup = "cable",
     order = "f",
@@ -56,7 +56,7 @@ data:extend({
   {
     type = "item",
     name = "transceiver",
-    icon = "__ThemTharHills__/graphics/icons/transceiver.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/transceiver.png",
     icon_size = 64,
     subgroup = "intermediate-product",
     order = "gb",
@@ -65,7 +65,7 @@ data:extend({
   {
     type = "item",
     name = "advanced-cable",
-    icon = "__ThemTharHills__/graphics/icons/advanced-cable.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/advanced-cable.png",
     icon_size = 64,
     subgroup = "intermediate-product",
     order = "z",
@@ -74,7 +74,7 @@ data:extend({
   {
     type = "item",
     name = "hv-power-regulator",
-    icon = "__ThemTharHills__/graphics/icons/hv-power-regulator.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/hv-power-regulator.png",
     icon_size = 64,
     subgroup = "intermediate-product",
     order = "gcb",
@@ -83,7 +83,7 @@ data:extend({
   {
     type = "item",
     name = "integrated-circuit",
-    icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/integrated-circuit.png",
     icon_size = 64,
     subgroup = "generic-circuits",
     order = "z",
@@ -126,7 +126,7 @@ if mods["Krastorio2"] then
   {
     type = "item",
     name = "potassium-nitrate",
-    icon = "__ThemTharHills__/graphics/icons/potassium-nitrate.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/potassium-nitrate.png",
     icon_size = 64,
     subgroup = "raw-material",
     order = "ga",
@@ -138,7 +138,7 @@ else
   {
     type = "fluid",
     name = "nitric-acid",
-    icon = "__ThemTharHills__/graphics/icons/nitric-acid.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/nitric-acid.png",
     icon_size = 64,
     subgroup = "fluid",
     order = "g",
@@ -155,7 +155,7 @@ if parts.aquaregia then
   {
     type = "fluid",
     name = "aqua-regia",
-    icon = "__ThemTharHills__/graphics/icons/aqua-regia.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/aqua-regia.png",
     icon_size = 64,
     subgroup = "fluid",
     order = "ga",
@@ -178,7 +178,7 @@ if mods["space-exploration"] then
     {
       type = "item",
       name = "gold-ingot",
-      icon = "__ThemTharHills__/graphics/icons/gold-ingot.png",
+      icon = "__ThemTharHills-Updated__/graphics/icons/gold-ingot.png",
       icon_size = 64,
       subgroup = "intermediate-product",
       order = "???",
@@ -187,7 +187,7 @@ if mods["space-exploration"] then
     {
       type = "fluid",
       name = "molten-gold",
-      icon = "__ThemTharHills__/graphics/icons/molten-gold.png",
+      icon = "__ThemTharHills-Updated__/graphics/icons/molten-gold.png",
       icon_size = 64,
       subgroup = "fluid",
       order = "a[molten]-b2",
@@ -205,7 +205,7 @@ if mods["FreightForwarding"] then
     {
       type = "item",
       name = "noble-nodule",
-      icon = "__ThemTharHills__/graphics/icons/noble-nodule.png",
+      icon = "__ThemTharHills-Updated__/graphics/icons/noble-nodule.png",
       icon_size = 64,
       subgroup = "raw-resource",
       order = "w[nodule]-f[noble]",
@@ -221,14 +221,14 @@ if mods["LunarLandings"] and not mods["BrassTacks-Updated"] then
     {
       type = "item",
       name = "cheese-ore",
-      icon = "__ThemTharHills__/graphics/icons/cheese-ore.png",
+      icon = "__ThemTharHills-Updated__/graphics/icons/cheese-ore.png",
       icon_size = 64, icon_mipmaps = 4,
       pictures =
           {
-            { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore.png",   scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore-1.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore-2.png", scale = 0.25, mipmap_count = 4 },
-            { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore-3.png", scale = 0.25, mipmap_count = 4 }
+            { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/cheese-ore.png",   scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/cheese-ore-1.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/cheese-ore-2.png", scale = 0.25, mipmap_count = 4 },
+            { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/cheese-ore-3.png", scale = 0.25, mipmap_count = 4 }
           },
       subgroup = "raw-resource",
       order = "h2",

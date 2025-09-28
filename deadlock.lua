@@ -1,13 +1,13 @@
 local parts = require("variable-parts")
 
 if deadlock then
-  deadlock.add_stack("gold-ore", "__ThemTharHills__/graphics/icons/stacking/gold-ore-stacked.png", "deadlock-stacking-1", 64)
-  deadlock.add_stack(parts.gold, "__ThemTharHills__/graphics/icons/stacking/gold-plate-stacked.png", "deadlock-stacking-1", 64)
-  deadlock.add_stack("gold-powder", "__ThemTharHills__/graphics/icons/stacking/gold-powder-stacked.png", "deadlock-stacking-1", 64)
-  deadlock.add_stack(parts.wire, "__ThemTharHills__/graphics/icons/stacking/gold-wire-stacked.png", "deadlock-stacking-2", 64)
-  deadlock.add_stack("integrated-circuit", "__ThemTharHills__/graphics/icons/stacking/integrated-circuit-stacked.png", "deadlock-stacking-3", 64)
+  deadlock.add_stack("gold-ore", "__ThemTharHills-Updated__/graphics/icons/stacking/gold-ore-stacked.png", "deadlock-stacking-1", 64)
+  deadlock.add_stack(parts.gold, "__ThemTharHills-Updated__/graphics/icons/stacking/gold-plate-stacked.png", "deadlock-stacking-1", 64)
+  deadlock.add_stack("gold-powder", "__ThemTharHills-Updated__/graphics/icons/stacking/gold-powder-stacked.png", "deadlock-stacking-1", 64)
+  deadlock.add_stack(parts.wire, "__ThemTharHills-Updated__/graphics/icons/stacking/gold-wire-stacked.png", "deadlock-stacking-2", 64)
+  deadlock.add_stack("integrated-circuit", "__ThemTharHills-Updated__/graphics/icons/stacking/integrated-circuit-stacked.png", "deadlock-stacking-3", 64)
   if mods["Krastorio2"] then
-    deadlock.add_stack("potassium-nitrate", "__ThemTharHills__/graphics/icons/stacking/potassium-nitrate-stacked.png", "deadlock-stacking-1", 64)
+    deadlock.add_stack("potassium-nitrate", "__ThemTharHills-Updated__/graphics/icons/stacking/potassium-nitrate-stacked.png", "deadlock-stacking-1", 64)
     data.raw.item["deadlock-stack-potassium-nitrate"].ib_badge = "KN"
   end
   data.raw.item["deadlock-stack-" .. parts.wire].ib_badge = "Au"

@@ -20,8 +20,8 @@ end
 ]]--
 
 if mods["248k"] then
-  rm.RemoveIngredient("processing-unit", "fi_materials_gold", 99999, 99999)
-  rm.RemoveIngredient("processing-unit", "fi_materials_gold", 99999, 99999)
+  rm.RemoveIngredient("processing-unit", "fi_materials_gold", 99999)
+  rm.RemoveIngredient("processing-unit", "fi_materials_gold", 99999)
   --rm.ReplaceProportional("gr_circuit_recipe", "gr_materials_gold_wire", "gold-wire", 1)
   --rm.ReplaceProportional("gr_plasma_cube_recipe", "fi_materials_gold", "gold-plate", 1)
 
@@ -46,7 +46,7 @@ if mods["248k"] then
   if mods["space-exploration"] then
     data.raw.recipe["fu_gold_ingot_recipe"].results = {{type="item", name="fu_materials_slag", amount=1}, {type="item", name="gold-ingot", amount=1}}
     data.raw.recipe["fu_gold_ingot_recipe"].main_product = "gold-ingot"
-    rm.AddIngredient("fu_gold_ingot_recipe", "fi_arc_gold", 825, 825)
+    rm.AddIngredient("fu_gold_ingot_recipe", "fi_arc_gold", 825)
     --data.raw.recipe["fu_gold_plate_recipe"] = nil
     tf.removeRecipeUnlock("fu_gold_ingot_tech", "fu_gold_plate_recipe")
     --nukeItem("fu_materials_gold_ingot")
@@ -64,7 +64,7 @@ if mods["248k"] then
   end
 
   --fission era
-  rm.RemoveIngredient("electric-engine-unit", "fi_materials_gold", 99999, 99999)
+  rm.RemoveIngredient("electric-engine-unit", "fi_materials_gold", 99999)
   if not (mods["BrassTacks-Updated"] or mods["IfNickel-Updated"]) then
     rm.ReplaceProportional("fi_crusher_recipe", "engine-unit", "electric-engine-unit", 0.67)
     rm.ReplaceProportional("fi_fiberer_recipe", "engine-unit", "electric-engine-unit", 0.67)
@@ -72,20 +72,20 @@ if mods["248k"] then
     tf.addPrereq("fi_crusher_tech", "electric-engine-unit")
   end
 
-  rm.AddIngredient("fi_fiberer_recipe", "hv-power-regulator", 1, 1)
-  rm.AddIngredient("fi_compound_machine_recipe", "hv-power-regulator", 1, 1)
-  rm.AddIngredient("fi_crusher_recipe", "hv-power-regulator", 1, 1)
-  rm.AddIngredient("fi_refinery_recipe", "hv-power-regulator", 1, 1)
-  rm.AddIngredient("fi_robo_charger_recipe", "hv-power-regulator", 5, 5)
-  rm.AddIngredient("fi_ki_circuit_recipe", "hv-power-regulator", 1, 1)
-  rm.AddIngredient("fi_ki_beacon_recipe", "hv-power-regulator", 1, 1)
-  rm.AddIngredient("fi_ki_core_recipe", "hv-power-regulator", 10, 10)
+  rm.AddIngredient("fi_fiberer_recipe", "hv-power-regulator", 1)
+  rm.AddIngredient("fi_compound_machine_recipe", "hv-power-regulator", 1)
+  rm.AddIngredient("fi_crusher_recipe", "hv-power-regulator", 1)
+  rm.AddIngredient("fi_refinery_recipe", "hv-power-regulator", 1)
+  rm.AddIngredient("fi_robo_charger_recipe", "hv-power-regulator", 5)
+  rm.AddIngredient("fi_ki_circuit_recipe", "hv-power-regulator", 1)
+  rm.AddIngredient("fi_ki_beacon_recipe", "hv-power-regulator", 1)
+  rm.AddIngredient("fi_ki_core_recipe", "hv-power-regulator", 10)
 
   --fusion era
-  rm.AddIngredient("fu_activator_recipe", "hv-power-regulator", 10, 10)
-  rm.AddIngredient("fu_fusor_recipe", "hv-power-regulator", 10, 10)
-  rm.AddIngredient("fu_lab_recipe", "hv-power-regulator", 10, 10)
-  rm.AddIngredient("fu_magnet_recipe", "hv-power-regulator", 10, 10)
+  rm.AddIngredient("fu_activator_recipe", "hv-power-regulator", 10)
+  rm.AddIngredient("fu_fusor_recipe", "hv-power-regulator", 10)
+  rm.AddIngredient("fu_lab_recipe", "hv-power-regulator", 10)
+  rm.AddIngredient("fu_magnet_recipe", "hv-power-regulator", 10)
 
-  rm.AddIngredient("fu_tech_sign_recipe", "integrated-circuit", 1, 1)
+  rm.AddIngredient("fu_tech_sign_recipe", "integrated-circuit", 1)
 end

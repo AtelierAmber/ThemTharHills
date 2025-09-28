@@ -8,9 +8,8 @@ data:extend({
     category = "chemistry",
     enabled = false,
     energy_required = 1,
-    ingredients = {{"gold-ore", 1}, {type="fluid", name=parts.aquaregia and "aqua-regia" or "nitric-acid", amount=10}},
-    result = "gold-powder",
-    result_count = 2,
+    ingredients = {{type="item", name="gold-ore", amount=1}, {type="fluid", name=parts.aquaregia and "aqua-regia" or "nitric-acid", amount=10}},
+    results = {{type="item", name="gold-powder",amount=2}},
     crafting_machine_tint = {
         primary = {0.75, 0.7, 0, 1},
         secondary = {1, 0.95, 0, 1},
@@ -23,7 +22,7 @@ data:extend({
     name = "trace-gold-from-copper",
     icons = {
       {
-        icon = "__ThemTharHills__/graphics/icons/gold-powder.png",
+        icon = "__ThemTharHills-Updated__/graphics/icons/gold-powder.png",
         icon_size = 64
       },
       {
@@ -38,7 +37,7 @@ data:extend({
     enabled = false,
     energy_required = 3,
     localised_name = {"recipe-name.trace-gold-from-copper"},
-    ingredients = {{"copper-ore", 3}, {type="fluid", name=parts.aquaregia and "aqua-regia" or "nitric-acid", amount=30}},
+    ingredients = {{type="item", name="copper-ore", amount=3}, {type="fluid", name=parts.aquaregia and "aqua-regia" or "nitric-acid", amount=30}},
     results = {{type="item", name="gold-powder", amount=1}, mods["IfNickel-Updated"] and {type="item", name="nickel-ore", amount=1, probability=0.25} or nil},
     main_product = "gold-powder",
     always_show_products = true,
@@ -58,9 +57,8 @@ data:extend({
     category = "smelting",
     enabled = false,
     energy_required = 3.2,
-    ingredients = {{"gold-powder", 3}},
-    result = parts.gold,
-    result_count = 1
+    ingredients = {{type="item", name="gold-powder", amount=3}},
+    results = {{type="item", name=parts.gold, amount=1}},
   },
   {
     type = "recipe",
@@ -68,80 +66,47 @@ data:extend({
     category = "crafting",
     enabled = false,
     energy_required = 0.5,
-    ingredients = {{parts.gold, 1}},
-    result = parts.wire,
-    result_count = 2,
+    ingredients = {{type="item", name=parts.gold, amount=1}},
+    result = {{type="item", name=parts.wire, amount=2}},
     lasermill = {helium=1, productivity=true, type="gubbins", multiply=2}
   },
   {
     type = "recipe",
     name = "transceiver",
     category = "crafting",
-    normal = {
-      enabled = false,
-      energy_required = 2,
-      ingredients = {{"electronic-circuit", 3}, {parts.wire, 5}, parts.preferred({"quartz", "silica", "iron-stick"}, {1, 1, 1}), parts.preferred({"pcb-solder", "solder"}, {1, 1})},
-      result = "transceiver"
-    },
-    expensive = {
-      enabled = false,
-      energy_required = 2,
-      ingredients = {{"electronic-circuit", 3}, {parts.wire, 10}, parts.preferred({"quartz", "silica", "iron-stick"}, {1, 1, 1}), parts.preferred({"pcb-solder", "solder"}, {2, 2})},
-      result = "transceiver"
-    }
+    enabled = false,
+    energy_required = 2,
+    ingredients = {{type="item", name="electronic-circuit", amount=3}, {type="item", name=parts.wire, amount=5}, 
+      parts.preferred({"quartz", "silica", "iron-stick"}, {1, 1, 1}), parts.preferred({"pcb-solder", "solder"}, {1, 1})},
+    result = "transceiver",
   },
   {
     type = "recipe",
     name = "advanced-cable",
     category = "advanced-crafting",
-    normal = {
-      enabled = false,
-      energy_required = 3,
-      ingredients = {parts.preferred({"silver-wire", "tinned-cable", "copper-cable"}, {3, 1, 1}), {parts.wire, 6}, {"plastic-bar", 3}},
-      result = "advanced-cable"
-    },
-    expensive = {
-      enabled = false,
-      energy_required = 3,
-      ingredients = {parts.preferred({"silver-wire", "tinned-cable", "copper-cable"}, {6, 2, 2}), {parts.wire, 12}, {"plastic-bar", 3}},
-      result = "advanced-cable"
-    }
+    enabled = false,
+    energy_required = 3,
+    ingredients = {parts.preferred({"silver-wire", "tinned-cable", "copper-cable"}, {3, 1, 1}), {type="item", name=parts.wire, amount=6}, {type="item", name="plastic-bar", amount=3}},
+    result = "advanced-cable",
   },
   {
     type = "recipe",
     name = "hv-power-regulator",
     category = "crafting",
-    normal = {
-      enabled = false,
-      energy_required = 6,
-      ingredients = {{"advanced-circuit", 5}, {"advanced-cable", 2}, {"battery", 2}, parts.preferred({"cooling-fan", "aluminum-plate", "galvanized-steel-plate", "steel-plate"}, {1, 5, 1, 1}), parts.optionalIngredient("el_energy_crystal_item", 1), parts.optionalIngredient("acsr-cable", 1)},
-      result = "hv-power-regulator"
-    },
-    expensive = {
-      enabled = false,
-      energy_required = 6,
-      ingredients = {{"advanced-circuit", 5}, {"advanced-cable", 4}, {"battery", 4}, parts.preferred({"cooling-fan", "aluminum-plate", "galvanized-steel-plate", "steel-plate"}, {1, 5, 1, 1}), parts.optionalIngredient("el_energy_crystal_item", 2), parts.optionalIngredient("acsr-cable", 1)},
-      result = "hv-power-regulator"
-    }
+    enabled = false,
+    energy_required = 6,
+    ingredients = {{type="item", name="advanced-circuit", amount=5}, {type="item", name="advanced-cable", amount=2}, {type="item", name="battery", amount=2}, 
+      parts.preferred({"cooling-fan", "aluminum-plate", "galvanized-steel-plate", "steel-plate"}, {1, 5, 1, 1}), parts.optionalIngredient("el_energy_crystal_item", 1), parts.optionalIngredient("acsr-cable", 1)},
+    result = "hv-power-regulator",
   },
   {
     type = "recipe",
     name = "integrated-circuit",
     category = "advanced-crafting",
-    normal = {
-      enabled = false,
-      energy_required = 1,
-      ingredients = {{"plastic-bar", 1}, {parts.gold, 2}, parts.preferred({"ll-silicon", "silicon-wafer", "silicon", "copper-plate"}, {2, 1, 2, 2})},
-      result = "integrated-circuit",
-      result_count = 2
-    },
-    expensive = {
-      enabled = false,
-      energy_required = 1,
-      ingredients = {{"plastic-bar", 1}, {parts.gold, 2}, parts.preferred({"ll-silicon", "silicon-wafer", "silicon", "copper-plate"}, {2, 1, 2, 2})},
-      result = "integrated-circuit",
-      result_count = 2
-    }
+    enabled = false,
+    energy_required = 1,
+    ingredients = {{type="item", name="plastic-bar", amount=1}, {type="item", name=parts.gold, amount=2}, parts.preferred({"ll-silicon", "silicon-wafer", "silicon", "copper-plate"}, {2, 1, 2, 2})},
+    results = {{type="item", name="integrated-circuit",amount=2}},
   }
 }
 )
@@ -176,7 +141,7 @@ if mods["bzgold"] and data.raw.item["silver-plate"] and rm.CheckIngredient("inte
       name = "integrated-circuit-silver",
       icons = {
         {
-          icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+          icon = "__ThemTharHills-Updated__/graphics/icons/integrated-circuit.png",
           icon_size = 64
         },
         {
@@ -187,25 +152,15 @@ if mods["bzgold"] and data.raw.item["silver-plate"] and rm.CheckIngredient("inte
         }
       },
       category = "advanced-crafting",
-      normal = {
-        enabled = false,
-        energy_required = 1,
-        ingredients = {{"plastic-bar", 1}, {parts.gold, 2}, {"silver-plate", 2}},
-        result = "integrated-circuit",
-        result_count = 2
-      },
-      expensive = {
-        enabled = false,
-        energy_required = 1,
-        ingredients = {{"plastic-bar", 1}, {parts.gold, 2}, {"silver-plate", 2}},
-        result = "integrated-circuit",
-        result_count = 2
-      }
+      enabled = false,
+      energy_required = 1,
+      ingredients = {{type="item", name="plastic-bar", amount=1}, {type="item", name=parts.gold, amount=2}, {type="item", name="silver-plate", amount=2}},
+      results = {{type="item", name="integrated-circuit",amount=2}},
     }
   })
   data.raw.recipe["integrated-circuit"].icons = {
     {
-      icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+      icon = "__ThemTharHills-Updated__/graphics/icons/integrated-circuit.png",
       icon_size = 64
     },
     {
@@ -229,7 +184,7 @@ if mods["Krastorio2"] then
           icon_mipmaps = 4,
         },
         {
-          icon = "__ThemTharHills__/graphics/icons/potassium-nitrate.png",
+          icon = "__ThemTharHills-Updated__/graphics/icons/potassium-nitrate.png",
           icon_size = 64,
           shift = {-8, -8},
           scale = 0.25
@@ -238,18 +193,10 @@ if mods["Krastorio2"] then
       category = "chemistry",
       subgroup = "fluid-recipes",
       order = "y03[ammonia]alt",
-      normal = {
-        enabled = false,
-        energy_required = 2,
-        ingredients = {{type="fluid", name="water", amount=20}, {type="item", name="potassium-nitrate", amount=1}},
-        results = {{type="fluid", name="ammonia", amount=20}}
-      },
-      expensive = {
-        enabled = false,
-        energy_required = 2,
-        ingredients = {{type="fluid", name="water", amount=20}, {type="item", name="potassium-nitrate", amount=2}},
-        results = {{type="fluid", name="ammonia", amount=20}}
-      },
+      enabled = false,
+      energy_required = 2,
+      ingredients = {{type="fluid", name="water", amount=20}, {type="item", name="potassium-nitrate", amount=1}},
+      results = {{type="fluid", name="ammonia", amount=20}},
       crafting_machine_tint = {
         primary = {0.5, 0.5, 1, 1},
         secondary = {1, 1, 1, 1},
@@ -272,7 +219,7 @@ if mods["Krastorio2"] then
             icon_mipmaps = 4,
           },
           {
-            icon = "__ThemTharHills__/graphics/icons/gold-ore.png",
+            icon = "__ThemTharHills-Updated__/graphics/icons/gold-ore.png",
             icon_size = 64,
             icon_mipmaps = 4,
             scale = 2
@@ -301,7 +248,7 @@ if mods["Krastorio2"] then
             icon_mipmaps = 4,
           },
           {
-            icon = "__ThemTharHills__/graphics/icons/potassium-nitrate.png",
+            icon = "__ThemTharHills-Updated__/graphics/icons/potassium-nitrate.png",
             icon_size = 64,
             scale = 0.25,
             shift = {-8, -8}
@@ -312,7 +259,7 @@ if mods["Krastorio2"] then
         order = "y04[nitric-acid]alt",
         enabled = false,
         energy_required = 3,
-        ingredients = {{"potassium-nitrate", 1}, {type="fluid", name="water", amount=30}},
+        ingredients = {{type="item", name="potassium-nitrate", amount=1}, {type="fluid", name="water", amount=30}},
         results = {{type="fluid", name="nitric-acid", amount=5}},
         crafting_machine_tint = {
           primary = {0.75, 0.75, 1, 1},
@@ -327,9 +274,8 @@ if mods["Krastorio2"] then
         category = "smelting-crafting",
         enabled = false,
         energy_required = 1,
-        ingredients = {{"gold-powder", 3}},
-        result = parts.wire,
-        result_count = 2
+        ingredients = {{type="item", name="gold-powder", amount=3}},
+        result = {{type="item", name=parts.wire, amount=2}},
       }
     }
   )
@@ -360,7 +306,7 @@ else
       energy_required = 1,
       subgroup = "fluid-recipes",
       order = "y04", --this is where it belongs with se. otherwise it will be moved later.
-      ingredients = {{"copper-plate", 1}, {type="fluid", name="water", amount=100}, {type="fluid", name="sulfuric-acid", amount=10}, parts.optionalIngredient("potassium-nitrate", 1)},
+      ingredients = {{type="item", name="copper-plate", amount=1}, {type="fluid", name="water", amount=100}, {type="fluid", name="sulfuric-acid", amount=10}, parts.optionalIngredient("potassium-nitrate", 1)},
       results = {{type="fluid", name="nitric-acid", amount=100}},
       crafting_machine_tint = {
         primary = {0.5, 0.75, 1, 1},
@@ -386,13 +332,13 @@ if mods["space-exploration"] then
     {
       {
         type = "recipe",
-        icon = "__ThemTharHills__/graphics/icons/molten-gold.png",
+        icon = "__ThemTharHills-Updated__/graphics/icons/molten-gold.png",
         icon_size = 64,
         subgroup = "gold",
         name = "molten-gold",
         category = "smelting",
         energy_required = 60,
-        ingredients = {{"gold-powder", 72}, {type="fluid", name="se-pyroflux", amount=10}},
+        ingredients = {{type="item", name="gold-powder", amount=72}, {type="fluid", name="se-pyroflux", amount=10}},
         results = {{type="fluid", name="molten-gold", amount=900}},
         enabled = false
       },
@@ -402,23 +348,21 @@ if mods["space-exploration"] then
         category = "casting",
         energy_required = 25,
         ingredients = {{type="fluid", name="molten-gold", amount=250}},
-        result = "gold-ingot",
+        result = {{type="item", name="gold-ingot", amount=1}},
         main_product = "gold-ingot", --required for bismuth to not break
-        result_count = 1,
         enabled = false
       },
       {
         type = "recipe",
         name = "gold-ingot-to-plate",
         icons = {
-          { icon = "__ThemTharHills__/graphics/icons/gold-plate.png", icon_size = 64 },
-          { icon = "__ThemTharHills__/graphics/icons/gold-ingot.png", icon_size = 64, scale=0.25, shift= {-8, -8}},
+          { icon = "__ThemTharHills-Updated__/graphics/icons/gold-plate.png", icon_size = 64 },
+          { icon = "__ThemTharHills-Updated__/graphics/icons/gold-ingot.png", icon_size = 64, scale=0.25, shift= {-8, -8}},
         },
         category = "crafting",
         energy_required = 5,
-        ingredients = {{"gold-ingot", 1}},
-        result = parts.gold,
-        result_count = 10,
+        ingredients = {{type="item", name="gold-ingot", amount=1}},
+        result = {{type="item", name=parts.gold, amount=10}},
         allow_decomposition = false,
         enabled = false
       }
@@ -445,7 +389,7 @@ if mods["FreightForwarding"] then
       category = "chemistry",
       energy_required = 15,
       allow_decomposition = false,
-      ingredients = {{"noble-nodule", 18}, {type="fluid", name="nitric-acid", amount=15}},
+      ingredients = {{type="item", name="noble-nodule", amount=18}, {type="fluid", name="nitric-acid", amount=15}},
       results = {{type="item", name="gold-ore", amount_min=40, amount_max=50}, {type="item", name=data.raw.item["silver-ore"] and "silver-ore" or "copper-ore", amount_min=0, amount_max=8}, {type="item", name="stone", amount_min=0, amount_max=4}, {type="item", name="noble-nodule", amount_min=0, amount_max=6}},
       main_product = "gold-ore",
       enabled = false,
@@ -468,10 +412,10 @@ if mods["LunarLandings"] then
         category = "ll-electric-smelting",
         subgroup = "ll-raw-material-moon",
         order = "a[moon-rock]-c",
-        icon = "__ThemTharHills__/graphics/icons/cheese-ore.png",
+        icon = "__ThemTharHills-Updated__/graphics/icons/cheese-ore.png",
         icon_size = 64,
         energy_required = 10,
-        ingredients = { {"cheese-ore", 20} },
+        ingredients = { {type="item", name="cheese-ore", amount=20} },
         results = {{type="item", name="gold-ore", amount=10}, {type="item", name="ll-moon-rock", amount=3}, {type="fluid", name="light-oil", amount=10, fluidbox_index = 1}},
         always_show_products = true,
         enabled = false
@@ -486,7 +430,7 @@ if mods["LunarLandings"] then
       localised_name = { "recipe-name.entangled-transceiver" },
       icons = {
         {
-          icon = "__ThemTharHills__/graphics/icons/transceiver.png",
+          icon = "__ThemTharHills-Updated__/graphics/icons/transceiver.png",
           icon_size = 64
         },
         {
@@ -498,7 +442,7 @@ if mods["LunarLandings"] then
       },
       energy_required = 15,
       allow_decomposition = false,
-      ingredients = {{"integrated-circuit", 30}, {"ll-down-polariton", 1}, {"ll-right-polariton", 1}},
+      ingredients = {{type="item", name="integrated-circuit", amount=30}, {type="item", name="ll-down-polariton", amount=1}, {type="item", name="ll-right-polariton", amount=1}},
       results = {{type="item", name="transceiver", amount=30}, {type="item", name="ll-up-polariton", amount=2}},
       main_product = "transceiver",
       enabled = false

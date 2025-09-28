@@ -50,5 +50,5 @@ local function createOreParticle(ore, path, variants)
 end
 
 data:extend({
-  createOreParticle("gold-ore", "__ThemTharHills__/graphics/ore", 4)
+  createOreParticle("gold-ore", "__ThemTharHills-Updated__/graphics/ore", 4)
 })

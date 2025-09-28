@@ -7,7 +7,7 @@ data:extend({
         name = "gold-processing",
         icons = {
           {
-            icon = "__ThemTharHills__/graphics/tech/gold-processing.png",
+            icon = "__ThemTharHills-Updated__/graphics/tech/gold-processing.png",
             icon_size = 256
           }
          },
@@ -45,7 +45,7 @@ data:extend({
           name = "gold-electronics",
           icons = {
             {
-              icon = "__ThemTharHills__/graphics/tech/gold-electronics.png",
+              icon = "__ThemTharHills-Updated__/graphics/tech/gold-electronics.png",
               icon_size = 256
             }
            },
@@ -75,7 +75,7 @@ data:extend({
           name = "high-voltage-equipment",
           icons = {
             {
-              icon = "__ThemTharHills__/graphics/tech/high-voltage-equipment.png",
+              icon = "__ThemTharHills-Updated__/graphics/tech/high-voltage-equipment.png",
               icon_size = 256
             }
            },
@@ -111,7 +111,7 @@ if mods["LunarLandings"] then
             name = "lunar-cheese-exploitation",
             icons = {
               {
-                icon = "__ThemTharHills__/graphics/tech/lunar-cheese-exploitation.png",
+                icon = "__ThemTharHills-Updated__/graphics/tech/lunar-cheese-exploitation.png",
                 icon_size = 64,
                 icon_mipmaps = 4
               }
@@ -143,7 +143,7 @@ if mods["LunarLandings"] then
           name = "entangled-communications",
           icons = {
             {
-              icon = "__ThemTharHills__/graphics/tech/gold-electronics.png",
+              icon = "__ThemTharHills-Updated__/graphics/tech/gold-electronics.png",
               icon_size = 256
             },
             {

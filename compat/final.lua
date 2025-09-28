@@ -15,25 +15,25 @@ if mods["space-exploration"] then
   if mods["bzgold"] then
     rm.AddProductRaw("se-core-fragment-omni", {type="item", name="gold-ore", amount=1})
   else
-    rm.RemoveProduct("se-core-fragment-omni", "gold-ore", 5, 5)
+    rm.RemoveProduct("se-core-fragment-omni", "gold-ore", 5)
   end
 
-  rm.ReplaceProportional("speed-module-3", "advanced-circuit", "integrated-circuit", 2, 2)
-  rm.ReplaceProportional("effectivity-module-3", "advanced-circuit", "integrated-circuit", 2, 2)
-  rm.ReplaceProportional("productivity-module-3", "advanced-circuit", "integrated-circuit", 2, 2)
+  rm.ReplaceProportional("speed-module-3", "advanced-circuit", "integrated-circuit", 2)
+  rm.ReplaceProportional("effectivity-module-3", "advanced-circuit", "integrated-circuit", 2)
+  rm.ReplaceProportional("productivity-module-3", "advanced-circuit", "integrated-circuit", 2)
 
   if rm.CheckIngredient("se-processing-unit-holmium", "silicon") then
-    rm.ReplaceIngredient("se-processing-unit-holmium", "silicon", "integrated-circuit", 5, 5)
+    rm.ReplaceIngredient("se-processing-unit-holmium", "silicon", "integrated-circuit", 5)
   else if rm.CheckIngredient("se-processing-unit-holmium", "silicon-wafer") then
-    rm.ReplaceIngredient("se-processing-unit-holmium", "silicon-wafer", "integrated-circuit", 5, 5)
+    rm.ReplaceIngredient("se-processing-unit-holmium", "silicon-wafer", "integrated-circuit", 5)
   else
-    rm.ReplaceIngredient("se-processing-unit-holmium", "electronic-circuit", "integrated-circuit", 5, 5)
+    rm.ReplaceIngredient("se-processing-unit-holmium", "electronic-circuit", "integrated-circuit", 5)
   end end
 end
 
 if mods["bismuth"] then
   --I'm not sure why it does this.
-  rm.RemoveIngredient("gold-plate", "gold-ore", 99999, 99999)
+  rm.RemoveIngredient("gold-plate", "gold-ore", 99999)
 end
 
 --TTH uses the SE ingot/plate distinction. bzgold's gold-plate analogue is called gold-ingot
@@ -125,7 +125,7 @@ if mods["Krastorio2"] or mods["bzgold"] or mods["bzchlorine"] then
   cu.moveRecipe("cpu", "fiddly-electrical-gubbins", "h")
   cu.moveRecipe("cpu-holmium", "fiddly-electrical-gubbins", "i")
 
-  if not mods["IfNickel-Updated"] then
+  if not mods["IfNickel"] then
     cu.moveItem("spark-plug", "fiddly-electrical-gubbins", "b")
     cu.moveRecipe("spark-plug", "fiddly-electrical-gubbins", "b")
   end

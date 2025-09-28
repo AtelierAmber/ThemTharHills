@@ -19,29 +19,28 @@ local allowed_recipes = {
 }
 
 --Get a reference to all prodmods to avoid doing these checks for each recipe
-local prodmods = {}
-for k, v in pairs(data.raw.module) do
-  if v.effect and v.effect["productivity"] and v.limitation then
-    table.insert(prodmods, v)
-  end
-end
 
 for k, v in pairs(allowed_recipes) do
   if data.raw.recipe[v] then
-    for j, i in pairs(prodmods) do
-      table.insert(i.limitation, v)
-    end
+    local va = data.raw.recipe[v].allowed_module_categories or {}
+    table.insert(va, "productivity")
+    data.raw.recipe[v].allowed_module_categories = va
   end
 end
 
 local function removeProdmodAllowed(recipename)
-  for k, v in pairs(prodmods) do
-    for k2, v2 in pairs(v.limitation) do
-      if v2 == recipename then
-        v.limitation[k2] = nil
-        break
+  if data.raw.recipe[recipename] then
+    local va = data.raw.recipe[recipename].allowed_module_categories or {}
+    local fi = -1
+    for k, v in pairs(va) do
+      if v == "productivity" then
+        fi = k
       end
     end
+    if fi > 0 then
+      table.remove(va, fi) 
+    end
+    data.raw.recipe[recipename].allowed_module_categories = va
   end
 end
 
@@ -68,7 +67,7 @@ end
 
 if mods["LunarLandings"] then
   --LL hard-overrides the satellite recipe in DFF.
-  rm.ReplaceIngredient("satellite", "advanced-circuit", "transceiver", 20, 20)
+  rm.ReplaceIngredient("satellite", "advanced-circuit", "transceiver", 20)
   if not mods["BrassTacks-Updated"] then
     tf.addRecipeUnlock("lunar-cheese-exploitation", "cheese-ore-processing-heat")
     data.raw.recipe["cheese-ore-processing-heat"].enabled = false

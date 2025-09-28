@@ -1,16 +1,29 @@
 local resource_autoplace = require("resource-autoplace")
 
+data.raw.planet.nauvis.map_gen_settings.autoplace_controls["gold-ore"] = {}
+data.raw.planet.nauvis.map_gen_settings.autoplace_settings.entity.settings["gold-ore"] = {}
+resource_autoplace.initialize_patch_set("gold-ore", true)
+
 data:extend({
+  {
+    type = "autoplace-control",
+    category = "resource",
+    name = "gold-ore",
+    localised_name = {"", (mods["LunarLandings"] and "[virtual-signal=ll-nauvis] " or "") .. "[entity=gold-ore] ", {"entity-name.gold-ore"}},
+    richness = true,
+    order = "b-dc"
+  },
   {
     type = "resource",
     name = "gold-ore",
-    icon = "__ThemTharHills__/graphics/icons/gold-ore.png",
+    icon = "__ThemTharHills-Updated__/graphics/icons/gold-ore.png",
     icon_size = 64,
     icon_mipmaps = 4,
     flags = {"placeable-neutral"},
     order="a-b-x",
     tree_removal_probability = 0.8,
     tree_removal_max_distance = 32 * 32,
+    map_color = {1, 0.8, 0},
     minable =
     {
       mining_particle = "gold-ore-particle",
@@ -37,14 +50,14 @@ data:extend({
     {
       sheet =
       {
-        filename = "__ThemTharHills__/graphics/ore/gold-ore.png",
+        filename = "__ThemTharHills-Updated__/graphics/ore/gold-ore.png",
         priority = "extra-high",
         size = 64,
         frame_count = 8,
         variation_count = 8,
         hr_version =
         {
-          filename = "__ThemTharHills__/graphics/ore/hr-gold-ore.png",
+          filename = "__ThemTharHills-Updated__/graphics/ore/hr-gold-ore.png",
           priority = "extra-high",
           size = 128,
           frame_count = 8,
@@ -53,20 +66,7 @@ data:extend({
         }
       }
     },
-    map_color = {1, 0.8, 0},
     mining_visualisation_tint = {1, 0.9, 0}
-  },
-  {
-    type = "autoplace-control",
-    category = "resource",
-    name = "gold-ore",
-    localised_name = {"", (mods["LunarLandings"] and "[virtual-signal=ll-nauvis] " or "") .. "[entity=gold-ore] ", {"entity-name.gold-ore"}},
-    richness = true,
-    order = "b-dc"
-  },
-  {
-    type = "noise-layer",
-    name = "gold-ore"
   }
 })
 
@@ -75,7 +75,7 @@ if mods["LunarLandings"] and not mods["BrassTacks-Updated"] then
     {
       type = "resource",
       name = "cheese-ore",
-      icon = "__ThemTharHills__/graphics/icons/cheese-ore.png",
+      icon = "__ThemTharHills-Updated__/graphics/icons/cheese-ore.png",
       icon_size = 64,
       icon_mipmaps = 4,
       flags = {"placeable-neutral"},
@@ -106,14 +106,14 @@ if mods["LunarLandings"] and not mods["BrassTacks-Updated"] then
       {
         sheet =
         {
-          filename = "__ThemTharHills__/graphics/ore/cheese-ore.png",
+          filename = "__ThemTharHills-Updated__/graphics/ore/cheese-ore.png",
           priority = "extra-high",
           size = 64,
           frame_count = 8,
           variation_count = 8,
           hr_version =
           {
-            filename = "__ThemTharHills__/graphics/ore/hr-cheese-ore.png",
+            filename = "__ThemTharHills-Updated__/graphics/ore/hr-cheese-ore.png",
             priority = "extra-high",
             size = 128,
             frame_count = 8,
@@ -132,10 +132,6 @@ if mods["LunarLandings"] and not mods["BrassTacks-Updated"] then
       localised_name = {"", "[virtual-signal=ll-luna] [entity=cheese-ore] ", {"entity-name.cheese-ore"}},
       richness = true,
       order = "d-ca"
-    },
-    {
-      type = "noise-layer",
-      name = "cheese-ore"
     }
   })
   data.raw.resource["cheese-ore"].autoplace.default_enabled = false

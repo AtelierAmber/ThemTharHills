@@ -10,12 +10,12 @@ if mods["aai-containers"] and not data.raw.item["tracker"] then
 end
 
 if mods["aai-signal-transmission"] then
-  rm.AddIngredient("aai-signal-sender", "transceiver", 10, 10)
-  rm.AddIngredient("aai-signal-receiver", "transceiver", 10, 10)
+  rm.AddIngredient("aai-signal-sender", "transceiver", 10)
+  rm.AddIngredient("aai-signal-receiver", "transceiver", 10)
 end
 
 if mods["aai-industry"] then
-  rm.AddIngredient("area-mining-drill", "hv-power-regulator", 1, 1)
+  rm.AddIngredient("area-mining-drill", "hv-power-regulator", 1)
 end
 
 if mods["space-exploration"] then
@@ -27,21 +27,21 @@ if mods["space-exploration"] then
     tf.removePrereq("nickel-electromagnet", "chemical-science-pack")
     tf.addPrereq("nickel-electromagnet", "high-voltage-equipment")
   else
-    rm.AddIngredient("se-space-particle-accelerator", "advanced-cable", 40, 40)
-    rm.AddIngredient("se-space-particle-collider", "advanced-cable", 100, 100)
-    rm.AddIngredient("se-space-plasma-generator", "advanced-cable", 40, 40)
-    rm.AddIngredient("se-space-electromagnetics-laboratory", "advanced-cable", 40, 40)
+    rm.AddIngredient("se-space-particle-accelerator", "advanced-cable", 40)
+    rm.AddIngredient("se-space-particle-collider", "advanced-cable", 100)
+    rm.AddIngredient("se-space-plasma-generator", "advanced-cable", 40)
+    rm.AddIngredient("se-space-electromagnetics-laboratory", "advanced-cable", 40)
 
-    rm.RemoveIngredient("se-space-pipe", "copper-cable", 2, 4)
-    rm.AddIngredient("se-space-pipe", "advanced-cable", 1, 1) -- plasma containment
-    rm.AddIngredient("se-space-transport-belt", "advanced-cable", 1, 1)
-    rm.AddIngredient("se-space-rail", "advanced-cable", 10, 10) -- batch of 100
-    rm.ReplaceIngredient("se-energy-beam-defence", "copper-plate", "advanced-cable", 200, 200)
+    rm.RemoveIngredient("se-space-pipe", "copper-cable", 2)
+    rm.AddIngredient("se-space-pipe", "advanced-cable", 1) -- plasma containment
+    rm.AddIngredient("se-space-transport-belt", "advanced-cable", 1)
+    rm.AddIngredient("se-space-rail", "advanced-cable", 10) -- batch of 100
+    rm.ReplaceIngredient("se-energy-beam-defence", "copper-plate", "advanced-cable", 200)
   end
 
   if settings.startup["themtharhills-se-maintenance"].value and ((not mods["IfNickel-Updated"]) or (mods["IfNickel-Updated"] and not (data.raw.item["nickel-electromagnet"] and settings.startup["ifnickel-se-maintenance"].value))) then
     local function add_catalyst(recipe, ingredient, amount, losschance, scrap, scrap_amount)
-      rm.AddIngredient(recipe, ingredient, amount, amount)
+      rm.AddIngredient(recipe, ingredient, amount)
       rm.AddProductRaw(recipe, {type="item", name=ingredient, amount=amount, probability=1.0 - losschance, catalyst_amount=amount})
       if scrap then
         rm.AddProductRaw(recipe, {type="item", name=scrap, amount=scrap_amount, probability=losschance})
@@ -79,7 +79,7 @@ if mods["space-exploration"] then
   if data.raw.item["skyseeker-armature"] then
     tf.removePrereq("skyseeker-armature", "se-rocket-science-pack")
     tf.addPrereq("skyseeker-armature", "advanced-electronics-2")
-    rm.AddIngredient("skyseeker-armature", "integrated-circuit", mods["bzgold"] and 1 or 2, mods["bzgold"] and 1 or 2)
+    rm.AddIngredient("skyseeker-armature", "integrated-circuit", mods["bzgold"] and 1 or 2)
   end
 
   rm.ReplaceProportional("se-empty-data", "copper-plate", "integrated-circuit", 1/2)
@@ -91,35 +91,35 @@ if mods["space-exploration"] then
 
   rm.AddIngredient("se-rocket-launch-pad", "hv-power-regulator", 50)
 
-  rm.AddIngredient("se-electric-boiler", "advanced-cable", 10, 10)
-  rm.AddIngredient("se-electric-boiler", "hv-power-regulator", 1, 1)
-  rm.RemoveIngredient("se-electric-boiler", "copper-plate", 200, 200)
+  rm.AddIngredient("se-electric-boiler", "advanced-cable", 10)
+  rm.AddIngredient("se-electric-boiler", "hv-power-regulator", 1)
+  rm.RemoveIngredient("se-electric-boiler", "copper-plate", 200)
 
-  rm.AddIngredient("se-space-assembling-machine", "hv-power-regulator", 1, 1)
+  rm.AddIngredient("se-space-assembling-machine", "hv-power-regulator", 1)
 
   rm.ReplaceProportional("se-space-radiator", "copper-cable", "advanced-cable", 1/4)
 
   if not mods["Krastorio2"] then
-    rm.AddIngredient("se-space-solar-panel", parts.gold, 8, 8)
+    rm.AddIngredient("se-space-solar-panel", parts.gold, 8)
     rm.ReplaceProportional("se-cryonite-ion-exchange-beads", "sulfuric-acid", "nitric-acid", 1)
   end
 
-  rm.ReplaceIngredient("se-holmium-powder", "copper-cable", parts.wire, 1, 1)
+  rm.ReplaceIngredient("se-holmium-powder", "copper-cable", parts.wire, 1)
 
-  rm.AddIngredient("se-dynamic-emitter", "transceiver", 1, 1)
+  rm.AddIngredient("se-dynamic-emitter", "transceiver", 1)
   rm.ReplaceProportional("se-conductivity-data", "copper-plate", "advanced-cable", 1/4)
 
-  rm.ReplaceIngredient("se-observation-frame-blank", "light-oil", "nitric-acid", 10, 10)
-  rm.ReplaceIngredient("se-observation-frame-blank-beryllium", "light-oil", "nitric-acid", 10, 10)
+  rm.ReplaceIngredient("se-observation-frame-blank", "light-oil", "nitric-acid", 10)
+  rm.ReplaceIngredient("se-observation-frame-blank-beryllium", "light-oil", "nitric-acid", 10)
 
-  rm.AddIngredient("se-belt-probe", "transceiver", 100, 100)
-  rm.AddIngredient("se-star-probe", "transceiver", 100, 100)
-  rm.AddIngredient("se-void-probe", "transceiver", 100, 100)
-  rm.AddIngredient("se-arcosphere-collector", "transceiver", 250, 250)
+  rm.AddIngredient("se-belt-probe", "transceiver", 100)
+  rm.AddIngredient("se-star-probe", "transceiver", 100)
+  rm.AddIngredient("se-void-probe", "transceiver", 100)
+  rm.AddIngredient("se-arcosphere-collector", "transceiver", 250)
 
   rm.ReplaceProportional("se-supercharger", "battery", "hv-power-regulator", 1/2)
 
-  rm.AddIngredient("se-space-thermodynamics-laboratory", "advanced-cable", 50, 50)
+  rm.AddIngredient("se-space-thermodynamics-laboratory", "advanced-cable", 50)
 
   data:extend({
     {
@@ -131,13 +131,13 @@ if mods["space-exploration"] then
           icon_size = 64, icon_mipmaps = 4
         },
         {
-          icon = "__ThemTharHills__/graphics/icons/gold-ore.png",
+          icon = "__ThemTharHills-Updated__/graphics/icons/gold-ore.png",
           icon_size = 64, icon_mipmaps = 4, scale = 0.25
         }
       },
       category = "hard-recycling",
       energy_required = 1,
-      ingredients = {{"gold-ore", 50}},
+      ingredients = {{type="item", name="gold-ore", amount=50}},
       result = "landfill",
       order = "z-b-gold-ore",
       enabled = false
