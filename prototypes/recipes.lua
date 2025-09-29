@@ -205,8 +205,8 @@ if mods["Krastorio2"] then
       }
     }
   })
-
-  local matterutil = require("__Krastorio2__/lib/public/data-stages/matter-util")
+  
+  local matterutil = require("__Krastorio2__/prototypes/libraries/matter")
   data:extend(
     {
       {
@@ -279,18 +279,16 @@ if mods["Krastorio2"] then
       }
     }
   )
-  matterutil.createMatterRecipe({
-    item_name = "gold-ore",
-    minimum_conversion_quantity = 10,
-    matter_value = 5,
+  matterutil.make_recipes({
+    material = {type = "item", name = "gold-ore", amount=10},
+    matter_count = 5,
     energy_required = 1,
     need_stabilizer = false,
     unlocked_by_technology = "kr-matter-gold-processing"
   })
-  matterutil.createMatterRecipe({
-    item_name = parts.gold,
-    minimum_conversion_quantity = 10,
-    matter_value = mods["space-exploration"] and 11.25 or 15,
+  matterutil.make_deconversion_recipe({
+    material = {type="item", name=parts.gold, amount=10},
+    matter_count = mods["space-exploration"] and 11.25 or 15,
     energy_required = 3,
     only_deconversion = true,
     need_stabilizer = true,
