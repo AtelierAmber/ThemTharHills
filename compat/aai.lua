@@ -109,8 +109,8 @@ if mods["space-exploration"] then
   rm.AddIngredient("se-dynamic-emitter", "transceiver", 1)
   rm.ReplaceProportional("se-conductivity-data", "copper-plate", "advanced-cable", 1/4)
 
-  rm.ReplaceIngredient("se-observation-frame-blank", "light-oil", "nitric-acid", 10)
-  rm.ReplaceIngredient("se-observation-frame-blank-beryllium", "light-oil", "nitric-acid", 10)
+  rm.ReplaceIngredient("se-observation-frame-blank", "light-oil", mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", 10)
+  rm.ReplaceIngredient("se-observation-frame-blank-beryllium", "light-oil", mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", 10)
 
   rm.AddIngredient("se-belt-probe", "transceiver", 100)
   rm.AddIngredient("se-star-probe", "transceiver", 100)

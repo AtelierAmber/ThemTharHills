@@ -30,8 +30,8 @@ if data.raw.fluid["hydrogen-chloride"] and not parts.aquaregia then
   else
     --bzchlorine hcl is harder to produce in bulk (needs equal sulfuric acid or else is very slow)
     --yes yes aqua regia is more hcl than hno3 but have you considered shut up
-    rm.ReplaceIngredient("gold-powder", "nitric-acid", "hydrogen-chloride", mods["Krastorio2"] and 10 or 2)
-    rm.ReplaceIngredient("trace-gold-from-copper", "nitric-acid", "hydrogen-chloride", mods["Krastorio2"] and 15 or 6)
+    rm.ReplaceIngredient("gold-powder", mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", "hydrogen-chloride", mods["Krastorio2"] and 10 or 2)
+    rm.ReplaceIngredient("trace-gold-from-copper", mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", "hydrogen-chloride", mods["Krastorio2"] and 15 or 6)
   end
 end
 
@@ -261,7 +261,7 @@ else
 end
 
 if mods["vtk-deepcore-mining"] then
-  rm.ReplaceIngredient("vtk-deepcore-mining-gold-ore-chunk-refining", "sulfuric-acid", "nitric-acid", 20)
+  rm.ReplaceIngredient("vtk-deepcore-mining-gold-ore-chunk-refining", "sulfuric-acid", mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", 20)
 end
 
 if mods["MoreScience"] then
