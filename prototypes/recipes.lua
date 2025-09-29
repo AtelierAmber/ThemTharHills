@@ -67,7 +67,7 @@ data:extend({
     enabled = false,
     energy_required = 0.5,
     ingredients = {{type="item", name=parts.gold, amount=1}},
-    result = {{type="item", name=parts.wire, amount=2}},
+    results = {{type="item", name=parts.wire, amount=2}},
     lasermill = {helium=1, productivity=true, type="gubbins", multiply=2}
   },
   {
@@ -78,7 +78,7 @@ data:extend({
     energy_required = 2,
     ingredients = {{type="item", name="electronic-circuit", amount=3}, {type="item", name=parts.wire, amount=5}, 
       parts.preferred({"quartz", "silica", "iron-stick"}, {1, 1, 1}), parts.preferred({"pcb-solder", "solder"}, {1, 1})},
-    result = "transceiver",
+    results = {{type="item", name="transceiver", amount=1}},
   },
   {
     type = "recipe",
@@ -87,7 +87,7 @@ data:extend({
     enabled = false,
     energy_required = 3,
     ingredients = {parts.preferred({"silver-wire", "tinned-cable", "copper-cable"}, {3, 1, 1}), {type="item", name=parts.wire, amount=6}, {type="item", name="plastic-bar", amount=3}},
-    result = "advanced-cable",
+    results = {{type="item", name="advanced-cable", amount=1}},
   },
   {
     type = "recipe",
@@ -97,7 +97,7 @@ data:extend({
     energy_required = 6,
     ingredients = {{type="item", name="advanced-circuit", amount=5}, {type="item", name="advanced-cable", amount=2}, {type="item", name="battery", amount=2}, 
       parts.preferred({"cooling-fan", "aluminum-plate", "galvanized-steel-plate", "steel-plate"}, {1, 5, 1, 1}), parts.optionalIngredient("el_energy_crystal_item", 1), parts.optionalIngredient("acsr-cable", 1)},
-    result = "hv-power-regulator",
+    results = {{type="item", name="hv-power-regulator", amount=1}},
   },
   {
     type = "recipe",
@@ -275,7 +275,7 @@ if mods["Krastorio2"] then
         enabled = false,
         energy_required = 1,
         ingredients = {{type="item", name="gold-powder", amount=3}},
-        result = {{type="item", name=parts.wire, amount=2}},
+        results = {{type="item", name=parts.wire, amount=2}},
       }
     }
   )
@@ -346,7 +346,7 @@ if mods["space-exploration"] then
         category = "casting",
         energy_required = 25,
         ingredients = {{type="fluid", name="molten-gold", amount=250}},
-        result = {{type="item", name="gold-ingot", amount=1}},
+        results = {{type="item", name="gold-ingot", amount=1}},
         main_product = "gold-ingot", --required for bismuth to not break
         enabled = false
       },
@@ -360,7 +360,7 @@ if mods["space-exploration"] then
         category = "crafting",
         energy_required = 5,
         ingredients = {{type="item", name="gold-ingot", amount=1}},
-        result = {{type="item", name=parts.gold, amount=10}},
+        results = {{type="item", name=parts.gold, amount=10}},
         allow_decomposition = false,
         enabled = false
       }
