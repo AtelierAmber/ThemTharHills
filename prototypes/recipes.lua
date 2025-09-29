@@ -273,7 +273,7 @@ if mods["Krastorio2"] then
       {
         type = "recipe",
         name = "gold-wire-s-c",
-        category = "smelting-crafting",
+        category = "smelting",
         enabled = false,
         energy_required = 1,
         ingredients = {{type="item", name="gold-powder", amount=3}},
