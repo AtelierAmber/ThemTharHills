@@ -235,7 +235,7 @@ if mods["Krastorio2"] then
           ingredients = {
             { "production-science-pack", 1 },
             { "utility-science-pack", 1 },
-            { "matter-tech-card", 1 },
+            { "kr-matter-tech-card", 1 },
           },
           time = 45
         }
