@@ -1,5 +1,6 @@
 local parts = require("variable-parts")
 local rm = require("recipe-modify")
+local tf = require("techfuncs")
 
 data:extend({
   {
@@ -76,7 +77,7 @@ data:extend({
     category = "crafting",
     enabled = false,
     energy_required = 2,
-    ingredients = {{type="item", name="electronic-circuit", amount=3}, {type="item", name=parts.wire, amount=5}, 
+    ingredients = tf.compilePrereqs{{type="item", name="electronic-circuit", amount=3}, {type="item", name=parts.wire, amount=5}, 
       parts.preferred({"quartz", "silica", "iron-stick"}, {1, 1, 1}), parts.preferred({"pcb-solder", "solder"}, {1, 1})},
     results = {{type="item", name="transceiver", amount=1}},
   },
@@ -95,7 +96,7 @@ data:extend({
     category = "crafting",
     enabled = false,
     energy_required = 6,
-    ingredients = {{type="item", name="advanced-circuit", amount=5}, {type="item", name="advanced-cable", amount=2}, {type="item", name="battery", amount=2}, 
+    ingredients = tf.compilePrereqs{{type="item", name="advanced-circuit", amount=5}, {type="item", name="advanced-cable", amount=2}, {type="item", name="battery", amount=2}, 
       parts.preferred({"cooling-fan", "aluminum-plate", "galvanized-steel-plate", "steel-plate"}, {1, 5, 1, 1}), parts.optionalIngredient("el_energy_crystal_item", 1), parts.optionalIngredient("acsr-cable", 1)},
     results = {{type="item", name="hv-power-regulator", amount=1}},
   },
@@ -105,7 +106,7 @@ data:extend({
     category = "advanced-crafting",
     enabled = false,
     energy_required = 1,
-    ingredients = {{type="item", name="plastic-bar", amount=1}, {type="item", name=parts.gold, amount=2}, parts.preferred({"ll-silicon", "silicon-wafer", "silicon", "copper-plate"}, {2, 1, 2, 2})},
+    ingredients = tf.compilePrereqs{{type="item", name="plastic-bar", amount=1}, {type="item", name=parts.gold, amount=2}, parts.preferred({"ll-silicon", "silicon-wafer", "silicon", "copper-plate"}, {2, 1, 2, 2})},
     results = {{type="item", name="integrated-circuit",amount=2}},
   }
 }
@@ -121,7 +122,8 @@ if parts.aquaregia then
       energy_required = 1,
       subgroup = "fluid-recipes",
       order = "y04a", --this is where it belongs with se. otherwise it will be moved later.
-      ingredients = {{type="fluid", name="hydrogen-chloride", amount=mods["Krastorio2"] and 100 or 40}, {type="fluid", name="nitric-acid", amount=mods["Krastorio2"] and 100 or 160}},
+      ingredients = tf.compilePrereqs{data.raw["fluid"]["hydrogen-chloride"] and {type="fluid", name="hydrogen-chloride", amount=mods["Krastorio2"] and 100 or 40} or nil, 
+        {type="fluid", name=mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", amount=mods["Krastorio2"] and 100 or 160}},
       results = {{type="fluid", name="aqua-regia", amount=200}},
       emissions_multiplier = 0.25,
       crafting_machine_tint = {
@@ -196,7 +198,7 @@ if mods["Krastorio2"] then
       enabled = false,
       energy_required = 2,
       ingredients = {{type="fluid", name="water", amount=20}, {type="item", name="potassium-nitrate", amount=1}},
-      results = {{type="fluid", name="ammonia", amount=20}},
+      results = {{type="fluid", name="kr-ammonia", amount=20}},
       crafting_machine_tint = {
         primary = {0.5, 0.5, 1, 1},
         secondary = {1, 1, 1, 1},
@@ -304,7 +306,7 @@ else
       energy_required = 1,
       subgroup = "fluid-recipes",
       order = "y04", --this is where it belongs with se. otherwise it will be moved later.
-      ingredients = {{type="item", name="copper-plate", amount=1}, {type="fluid", name="water", amount=100}, {type="fluid", name="sulfuric-acid", amount=10}, parts.optionalIngredient("potassium-nitrate", 1)},
+      ingredients = tf.compilePrereqs{{type="item", name="copper-plate", amount=1}, {type="fluid", name="water", amount=100}, {type="fluid", name="sulfuric-acid", amount=10}, parts.optionalIngredient("potassium-nitrate", 1)},
       results = {{type="fluid", name="nitric-acid", amount=100}},
       crafting_machine_tint = {
         primary = {0.5, 0.75, 1, 1},
@@ -388,7 +390,8 @@ if mods["FreightForwarding"] then
       energy_required = 15,
       allow_decomposition = false,
       ingredients = {{type="item", name="noble-nodule", amount=18}, {type="fluid", name=mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", amount=15}},
-      results = {{type="item", name="gold-ore", amount_min=40, amount_max=50}, {type="item", name=data.raw.item["silver-ore"] and "silver-ore" or "copper-ore", amount_min=0, amount_max=8}, {type="item", name="stone", amount_min=0, amount_max=4}, {type="item", name="noble-nodule", amount_min=0, amount_max=6}},
+      results = {{type="item", name="gold-ore", amount_min=40, amount_max=50}, {type="item", name=data.raw.item["silver-ore"] and "silver-ore" or "copper-ore", amount_min=0, amount_max=8}, 
+        {type="item", name="stone", amount_min=0, amount_max=4}, {type="item", name="noble-nodule", amount_min=0, amount_max=6}},
       main_product = "gold-ore",
       enabled = false,
       crafting_machine_tint = {
