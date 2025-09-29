@@ -173,6 +173,7 @@ function recipemod.ReplaceProportional(recipename, ingredient, replacement, fact
   if factor >= 1 then
     recipemod.ReplaceIngredient(recipename, ingredient, replacement, final_amount(amt * factor))
   else
+
     recipemod.RemoveIngredient(recipename, ingredient, amt)
     recipemod.AddIngredient(recipename, replacement, final_amount(amt * factor))
   end
@@ -207,6 +208,12 @@ function recipemod.multiply(recipe, factor, cost, output, time)
     else
       recipe.energy_required = factor / 2
     end
+  end
+end
+
+function recipemod.SetCategory(recipe, category)
+  if data.raw.recipe[recipe] then
+      data.raw.recipe[recipe].category = category
   end
 end
 

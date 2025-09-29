@@ -78,7 +78,7 @@ if mods["space-exploration"] then
 
   if data.raw.item["skyseeker-armature"] then
     tf.removePrereq("skyseeker-armature", "se-rocket-science-pack")
-    tf.addPrereq("skyseeker-armature", "advanced-electronics-2")
+    tf.addPrereq("skyseeker-armature", "processing-unit")
     rm.AddIngredient("skyseeker-armature", "integrated-circuit", mods["bzgold"] and 1 or 2)
   end
 

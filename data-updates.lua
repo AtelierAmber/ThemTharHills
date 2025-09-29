@@ -2,7 +2,7 @@ local parts = require("variable-parts")
 local tf = require("techfuncs")
 local rm = require("recipe-modify")
 
-tf.addPrereq("advanced-electronics", "gold-electronics")
+tf.addPrereq("advanced-circuit", "gold-electronics")
 if mods["bzchlorine"] then
   local gold_mult = 2
   if mods["bzgold"] and mods["space-exploration"] then
@@ -35,9 +35,9 @@ if data.raw.fluid["hydrogen-chloride"] and not parts.aquaregia then
   end
 end
 
-if mods["Krastorio2"] and not mods["bzchlorine"] and (rm.CheckIngredient("gold-powder", "aqua-regia") or rm.CheckIngredient("gold-powder", "hydrogen-chloride")) then
-  tf.removeRecipeUnlock("kr-advanced-chemistry", "hydrogen-chloride")
-  tf.addRecipeUnlock("kr-fluids-chemistry", "hydrogen-chloride")
+if mods["Krastorio2"] and not mods["bzchlorine"] and (rm.CheckIngredient("gold-powder", "aqua-regia") or rm.CheckIngredient("gold-powder", "kr-hydrogen-chloride")) then
+  tf.removeRecipeUnlock("kr-advanced-chemistry", "kr-hydrogen-chloride")
+  tf.addRecipeUnlock("kr-fluids-chemistry", "kr-hydrogen-chloride")
 end
 
 if (mods["Krastorio2"] and mods["bztungsten"] and mods["FreightForwarding"]) and not (mods["BrimStuff-Updated"] or mods["bzgas"]) then
@@ -70,15 +70,17 @@ else
     rm.SetCategory("integrated-circuit", "crafting-with-fluid")
   else if mods["LasingAround-Updated"] then
     data.raw.recipe["integrated-circuit"].lasermill = {helium=5, convert=true, se_variant="space-crafting", se_tooltip_entity="se-space-assembling-machine", type="circuit"}
-    tf.addPrereq("advanced-electronics-2", "laser-mill")
+    tf.addPrereq("processing-unit", "laser-mill")
   end end
   --silicon wafers are pretty expensive, reduce the need for them
   rm.multiply("integrated-circuit", 2, true, true, true)
   rm.RemoveIngredient("integrated-circuit", "silicon-wafer", 1)
 end
 
-tf.addRecipeUnlock("advanced-electronics-2", "integrated-circuit")
-tf.addRecipeUnlock("advanced-electronics-2", "integrated-circuit-silver")
+tf.addRecipeUnlock("processing-unit", "integrated-circuit")
+if mods["bzgold"] then
+  tf.addRecipeUnlock("processing-unit", "integrated-circuit-silver")
+end
 
 rm.AddIngredient("speed-module", parts.wire, 5)
 rm.AddIngredient("effectivity-module", parts.wire, 5)
@@ -320,15 +322,17 @@ require("compat.freight")
 require("compat.248k")
 
 -- What is ib_badge??
-data.raw.item["nitric-acid-barrel"].ib_badge = "NA"
-data.raw.recipe["fill-nitric-acid-barrel"].ib_badge = "NA"
-data.raw.recipe["fill-nitric-acid-barrel"].ib_corner = "left-bottom"
-data.raw.recipe["empty-nitric-acid-barrel"].ib_badge = "NA"
-data.raw.recipe["empty-nitric-acid-barrel"].ib_corner = "left-bottom"
+if not mods["Krastorio2"] then
+  data.raw.item["nitric-acid-barrel"].ib_badge = "NA"
+  data.raw.recipe["nitric-acid-barrel"].ib_badge = "NA"
+  data.raw.recipe["nitric-acid-barrel"].ib_corner = "left-bottom"
+  data.raw.recipe["empty-nitric-acid-barrel"].ib_badge = "NA"
+  data.raw.recipe["empty-nitric-acid-barrel"].ib_corner = "left-bottom"
+end
 if parts.aquaregia then
   data.raw.item["aqua-regia-barrel"].ib_badge = "AR"
-  data.raw.recipe["fill-aqua-regia-barrel"].ib_badge = "AR"
-  data.raw.recipe["fill-aqua-regia-barrel"].ib_corner = "left-bottom"
+  data.raw.recipe["aqua-regia-barrel"].ib_badge = "AR"
+  data.raw.recipe["aqua-regia-barrel"].ib_corner = "left-bottom"
   data.raw.recipe["empty-aqua-regia-barrel"].ib_badge = "AR"
   data.raw.recipe["empty-aqua-regia-barrel"].ib_corner = "left-bottom"
 end

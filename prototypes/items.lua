@@ -145,7 +145,8 @@ else
     default_temperature = 25,
     max_temperature = 25,
     base_color = {r=0.75, g=0.75, b=1, a=1},
-    flow_color = {r=1, g=1, b=1, a=1}
+    flow_color = {r=1, g=1, b=1, a=1},
+    auto_barrel = true
   }
   })
 end
@@ -162,7 +163,8 @@ if parts.aquaregia then
     default_temperature = 25,
     max_temperature = 25,
     base_color = {r=1, g=0.2, b=0, a=1},
-    flow_color = {r=1, g=1, b=1, a=1}
+    flow_color = {r=1, g=1, b=1, a=1},
+    auto_barrel = true
   }
   })
 end
