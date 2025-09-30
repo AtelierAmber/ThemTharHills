@@ -247,16 +247,16 @@ if not mods["Krastorio2"] then
   rm.ReplaceIngredient("rocket-fuel", "light-oil", "nitric-acid", 10)
 end
 
-rm.ReplaceIngredient("rocket-control-unit", "speed-module", "transceiver", 1)
+--rm.ReplaceIngredient("rocket-control-unit", "speed-module", "transceiver", 1)
 if mods["space-exploration"] then
   rm.AddIngredient("satellite", "transceiver", 25)
 else
   if mods["LunarLandings"] then
-    rm.AddIngredient("rocket-control-unit", "advanced-circuit", 4)
-    tf.addPrereq("rocket-control-unit", "chemical-science-pack")
+    --rm.AddIngredient("rocket-control-unit", "advanced-circuit", 4)
+    --tf.addPrereq("rocket-control-unit", "chemical-science-pack")
   else
     rm.AddIngredient("satellite", "transceiver", 100)
-    rm.AddIngredient("rocket-control-unit", "integrated-circuit", 10)
+    --rm.AddIngredient("rocket-control-unit", "integrated-circuit", 10)
   end
 end
 

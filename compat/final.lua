@@ -138,7 +138,7 @@ cu.moveItem("gyroscope", "specialized-electronics", "c")
 cu.moveItem("hv-power-regulator", "specialized-electronics", "d")
 if not mods["space-exploration"] then
   cu.moveItem("flying-robot-frame", "specialized-electronics", "e")
-  cu.moveItem("rocket-control-unit", "specialized-electronics", "f")
+  --cu.moveItem("rocket-control-unit", "specialized-electronics", "f")
 end
 cu.moveItem("energy-control-unit", "specialized-electronics", "g")
 cu.moveRecipe("solar-cell", "specialized-electronics", "a")
