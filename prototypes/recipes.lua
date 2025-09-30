@@ -262,7 +262,7 @@ if mods["Krastorio2"] then
         enabled = false,
         energy_required = 3,
         ingredients = {{type="item", name="potassium-nitrate", amount=1}, {type="fluid", name="water", amount=30}},
-        results = {{type="fluid", name="nitric-acid", amount=5}},
+        results = {{type="fluid", name=mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", amount=5}},
         crafting_machine_tint = {
           primary = {0.75, 0.75, 1, 1},
           secondary = {1, 1, 1, 1},
