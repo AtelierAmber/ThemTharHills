@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.1
+Date: 2025-10-07
+  Changes:
+    - Fixed iron stick recipe unlock timing issue
+    - Fixed catalyst recipes not using new catalyst definition
+---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 2025-09-29
   Changes:
