@@ -1,4 +1,4 @@
-local parts = require("BrassTacks-Updated.optionals")
+local parts = require("variable-parts")
 local tf = require("techfuncs")
 local rm = require("recipe-modify")
 
