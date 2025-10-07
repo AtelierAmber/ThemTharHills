@@ -1,6 +1,6 @@
 local rm = require("recipe-modify")
 local tf = require("techfuncs")
-local parts = require("variable-parts")
+local parts = require("BrassTacks-Updated.optionals")
 
 local goldships = true
 

@@ -42,7 +42,7 @@ if mods["space-exploration"] then
   if settings.startup["themtharhills-se-maintenance"].value and ((not mods["IfNickel-Updated"]) or (mods["IfNickel-Updated"] and not (data.raw.item["nickel-electromagnet"] and settings.startup["ifnickel-se-maintenance"].value))) then
     local function add_catalyst(recipe, ingredient, amount, losschance, scrap, scrap_amount)
       rm.AddIngredient(recipe, ingredient, amount)
-      rm.AddProductRaw(recipe, {type="item", name=ingredient, amount=amount, probability=1.0 - losschance, catalyst_amount=amount})
+      rm.AddProductRaw(recipe, {type="item", name=ingredient, amount=amount, probability=1.0 - losschance, ignored_by_productivity=amount, ignored_by_stats=amount})
       if scrap then
         rm.AddProductRaw(recipe, {type="item", name=scrap, amount=scrap_amount, probability=losschance})
       end
