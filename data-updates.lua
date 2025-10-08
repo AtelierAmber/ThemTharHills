@@ -78,7 +78,7 @@ else
 end
 
 tf.addRecipeUnlock("processing-unit", "integrated-circuit")
-if mods["bzgold"] then
+if mods["bzgold"] and data.raw.recipe["integrated-circuit-silver"] then
   tf.addRecipeUnlock("processing-unit", "integrated-circuit-silver")
 end
 
