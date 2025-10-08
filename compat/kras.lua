@@ -26,8 +26,8 @@ if mods["advanced-centrifuge"] then
 end
 
 if mods["Krastorio2"] then
-  rm.RemoveIngredient("energy-control-unit", "electronic-components", 9)
-  rm.AddIngredient("energy-control-unit", "hv-power-regulator", 1)
+  rm.RemoveIngredient("kr-energy-control-unit", "kr-electronic-components", 9)
+  rm.AddIngredient("kr-energy-control-unit", "hv-power-regulator", 1)
 
   rm.ReplaceProportional("kr-tesla-coil", "copper-cable", "advanced-cable", 1/4)
 
@@ -47,8 +47,8 @@ if mods["Krastorio2"] then
 
   rm.AddIngredient("kr-advanced-solar-panel", parts.gold, 5)
 
-  rm.ReplaceProportional("kr-advanced-chemical-plant", "electronic-components", "integrated-circuit", 1/2)
-  rm.ReplaceProportional("kr-quantum-computer", "electronic-components", "integrated-circuit", 1/2)
+  rm.ReplaceProportional("kr-advanced-chemical-plant", "kr-electronic-components", "integrated-circuit", 1/2)
+  rm.ReplaceProportional("kr-quantum-computer", "kr-electronic-components", "integrated-circuit", 1/2)
 
   rm.ReplaceProportional("kr-advanced-radar", "advanced-circuit", "hv-power-regulator", 1/5)
   rm.AddIngredient("kr-advanced-radar", "transceiver", 2)
@@ -61,8 +61,8 @@ if mods["Krastorio2"] then
   if not mods["LasingAround-Updated"] then
     rm.ReplaceIngredient("kr-advanced-splitter", "advanced-circuit", "integrated-circuit", 2)
   end
-  rm.ReplaceProportional("kr-small-roboport", "electronic-components", "integrated-circuit", 1)
-  rm.ReplaceProportional("kr-nuclear-locomotive", "electronic-components", "integrated-circuit", 1/5)
+  rm.ReplaceProportional("kr-small-roboport", "kr-electronic-components", "integrated-circuit", 1)
+  rm.ReplaceProportional("kr-nuclear-locomotive", "kr-electronic-components", "integrated-circuit", 1/5)
 
   tf.addRecipeUnlock("kr-advanced-chemistry", "ammonia-from-potassium-nitrate")
 

@@ -109,7 +109,7 @@ if mods["Krastorio2"] or mods["bzgold"] or mods["bzchlorine"] then
   cu.moveItem("solder", "fiddly-electrical-gubbins", "a")
   cu.moveItem("pcb-solder", "fiddly-electrical-gubbins", "ab")
   cu.moveItem("battery", "fiddly-electrical-gubbins", "c")
-  cu.moveItem("electronic-components", "fiddly-electrical-gubbins", "d")
+  cu.moveItem("kr-electronic-components", "fiddly-electrical-gubbins", "d")
   cu.moveItem("silicon-wafer", "fiddly-electrical-gubbins", "e")
   cu.moveItem("temperature-sensor", "fiddly-electrical-gubbins", "f")
   cu.moveItem("mlcc", "fiddly-electrical-gubbins", "g")
@@ -118,7 +118,7 @@ if mods["Krastorio2"] or mods["bzgold"] or mods["bzchlorine"] then
   cu.moveRecipe("solder", "fiddly-electrical-gubbins", "a")
   cu.moveRecipe("pcb-solder", "fiddly-electrical-gubbins", "ab")
   cu.moveRecipe("battery", "fiddly-electrical-gubbins", "c")
-  cu.moveRecipe("electronic-components", "fiddly-electrical-gubbins", "d")
+  cu.moveRecipe("kr-electronic-components", "fiddly-electrical-gubbins", "d")
   cu.moveRecipe("silicon-wafer", "fiddly-electrical-gubbins", "e")
   cu.moveRecipe("temperature-sensor", "fiddly-electrical-gubbins", "f")
   cu.moveRecipe("mlcc", "fiddly-electrical-gubbins", "g")
@@ -140,7 +140,7 @@ if not mods["space-exploration"] then
   cu.moveItem("flying-robot-frame", "specialized-electronics", "e")
   --cu.moveItem("rocket-control-unit", "specialized-electronics", "f")
 end
-cu.moveItem("energy-control-unit", "specialized-electronics", "g")
+cu.moveItem("kr-energy-control-unit", "specialized-electronics", "g")
 cu.moveRecipe("solar-cell", "specialized-electronics", "a")
 
 if not mods["Krastorio2"] and not mods["space-exploration"] then

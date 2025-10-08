@@ -78,7 +78,7 @@ else
 end
 
 tf.addRecipeUnlock("processing-unit", "integrated-circuit")
-if mods["bzgold"] then
+if mods["bzgold"] and data.raw.recipe["integrated-circuit-silver"] then
   tf.addRecipeUnlock("processing-unit", "integrated-circuit-silver")
 end
 
@@ -193,7 +193,7 @@ rm.ReplaceProportional("logistic-chest-requester", "electronic-circuit", "transc
 rm.ReplaceProportional("logistic-chest-buffer", "electronic-circuit", "transceiver", 1/3)
 
 if parts.heavyGyro then
-  rm.RemoveIngredient("flying-robot-frame", "electronic-components", 9999)
+  rm.RemoveIngredient("flying-robot-frame", "kr-electronic-components", 9999)
 
   rm.ReplaceIngredient("artillery-shell", "radar", "transceiver", 1)
   rm.RemoveIngredient("construction-robot", "electronic-circuit", 1)

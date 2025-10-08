@@ -6,11 +6,34 @@
   "homepage": "https://github.com/AtelierAmber/ThemTharHills-Updated",
   "description": "Updated for 2.0. Adds gold ore and some electronic intermediates.",
   "factorio_version": "2.0",
-  "dependencies": ["base >= 2.0", "? BrassTacks-Updated", "? IfNickel-Updated", "? bzgold", "? bzaluminum", "? bztin", "? bzsilicon", "? bzchlorine", "? space-exploration", "? aai-industry", "? aai-containers", 
-  "? aai-signal-transmission", "? deadlock-beltboxes-loaders", "? DeadlockCrating", "? vtk-deep-core-mining", "? Krastorio2", "? FluidMustFlow", "? FreightForwarding", "? bismuth", "? LunarLandings"],
+  "dependencies": [
+    "base >= 2.0",
+    "? BrassTacks-Updated",
+    "? IfNickel-Updated",
+    "? bzgold",
+    "? bzaluminum",
+    "? bztin",
+    "? bzsilicon",
+    "? bzchlorine",
+    "? space-exploration",
+    "? aai-industry",
+    "? aai-containers",
+    "? aai-signal-transmission",
+    "? deadlock-beltboxes-loaders",
+    "? DeadlockCrating",
+    "? vtk-deep-core-mining",
+    "? Krastorio2",
+    "? FluidMustFlow",
+    "? FreightForwarding",
+    "? bismuth",
+    "? LunarLandings"
+  ],
   "package": {
     "git_publish_branch": "main",
-    "ignore": [ "imgui.ini", "screenshots/*" ],
+    "ignore": [
+      "imgui.ini",
+      "screenshots/*"
+    ],
     "sync_portal_details": true
   }
 }
