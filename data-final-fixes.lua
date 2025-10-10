@@ -18,13 +18,9 @@ local allowed_recipes = {
   "cheese-ore-processing"
 }
 
---Get a reference to all prodmods to avoid doing these checks for each recipe
-
 for k, v in pairs(allowed_recipes) do
   if data.raw.recipe[v] then
-    local va = data.raw.recipe[v].allowed_module_categories or {}
-    table.insert(va, "productivity")
-    data.raw.recipe[v].allowed_module_categories = va
+    data.raw.recipe[v].allow_productivity = true
   end
 end
 
