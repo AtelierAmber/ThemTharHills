@@ -46,10 +46,8 @@ if (mods["Krastorio2"] and mods["bztungsten"] and mods["FreightForwarding"]) and
   rm.RemoveIngredient("chemical-plant", "tungsten-carbide", 99999)
 end
 
-if rm.CheckIngredient("processing-unit", "kr-silicon") then
-  rm.ReplaceIngredient("processing-unit", "kr-silicon", "integrated-circuit", 10)
-else if rm.CheckIngredient("processing-unit", "silicon") then
-    rm.ReplaceIngredient("processing-unit", "silicon", "integrated-circuit", 10)
+if rm.CheckIngredient("processing-unit", mods["Krastorio2"] and "kr-silicon" or "silicon") then
+  rm.ReplaceIngredient("processing-unit", mods["Krastorio2"] and "kr-silicon" or "silicon", "integrated-circuit", 10)
 else if rm.CheckIngredient("processing-unit", "silicon-wafer") then
   rm.ReplaceIngredient("processing-unit", "silicon-wafer", "integrated-circuit", 10)
 else

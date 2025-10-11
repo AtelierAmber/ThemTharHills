@@ -22,10 +22,8 @@ if mods["space-exploration"] then
   rm.ReplaceProportional("efficiency-module-3", "advanced-circuit", "integrated-circuit", 2)
   rm.ReplaceProportional("productivity-module-3", "advanced-circuit", "integrated-circuit", 2)
 
-  if rm.CheckIngredient("se-processing-unit-holmium", "kr-silicon") then
-    rm.ReplaceIngredient("se-processing-unit-holmium", "kr-silicon", "integrated-circuit", 10)
-  else if rm.CheckIngredient("se-processing-unit-holmium", "silicon") then
-    rm.ReplaceIngredient("se-processing-unit-holmium", "silicon", "integrated-circuit", 5)
+  if rm.CheckIngredient("se-processing-unit-holmium", mods["Krastorio2"] and "kr-silicon" or "silicon") then
+    rm.ReplaceIngredient("se-processing-unit-holmium", mods["Krastorio2"] and "kr-silicon" or "silicon", "integrated-circuit", 5)
   else if rm.CheckIngredient("se-processing-unit-holmium", "silicon-wafer") then
     rm.ReplaceIngredient("se-processing-unit-holmium", "silicon-wafer", "integrated-circuit", 5)
   else

@@ -110,7 +110,7 @@ data:extend({
     category = "advanced-crafting",
     enabled = false,
     energy_required = 1,
-    ingredients = tf.compilePrereqs{{type="item", name="plastic-bar", amount=1}, {type="item", name=parts.gold, amount=2}, parts.preferred({"ll-silicon", "silicon-wafer", "kr-silicon", "silicon", "copper-plate"}, {2, 1, 2, 2})},
+    ingredients = tf.compilePrereqs{{type="item", name="plastic-bar", amount=1}, {type="item", name=parts.gold, amount=2}, parts.preferred({"ll-silicon", "silicon-wafer", mods["Krastorio2"] and "kr-silicon" or "silicon", "copper-plate"}, {2, 1, 2, 2})},
     results = {{type="item", name="integrated-circuit",amount=2}},
   }
 }
