@@ -46,13 +46,15 @@ if (mods["Krastorio2"] and mods["bztungsten"] and mods["FreightForwarding"]) and
   rm.RemoveIngredient("chemical-plant", "tungsten-carbide", 99999)
 end
 
-if rm.CheckIngredient("processing-unit", "silicon") then
-  rm.ReplaceIngredient("processing-unit", "silicon", "integrated-circuit", 10)
+if rm.CheckIngredient("processing-unit", "kr-silicon") then
+  rm.ReplaceIngredient("processing-unit", "kr-silicon", "integrated-circuit", 10)
+else if rm.CheckIngredient("processing-unit", "silicon") then
+    rm.ReplaceIngredient("processing-unit", "silicon", "integrated-circuit", 10)
 else if rm.CheckIngredient("processing-unit", "silicon-wafer") then
   rm.ReplaceIngredient("processing-unit", "silicon-wafer", "integrated-circuit", 10)
 else
   rm.ReplaceIngredient("processing-unit", "electronic-circuit", "integrated-circuit", 10)
-end end
+end end end
 
 if rm.CheckIngredient("processing-unit", "mainboard") and not rm.CheckIngredient("mainboard", "temperature-sensor") then -- platinum is off or it's been moved to fans
   rm.RemoveIngredient("processing-unit", "integrated-circuit", 5)
@@ -83,14 +85,14 @@ if mods["bzgold"] and data.raw.recipe["integrated-circuit-silver"] then
 end
 
 rm.AddIngredient("speed-module", parts.wire, 5)
-rm.AddIngredient("effectivity-module", parts.wire, 5)
+rm.AddIngredient("efficiency-module", parts.wire, 5)
 rm.AddIngredient("productivity-module", parts.wire, 5)
 
 if mods["space-exploration"] then
   tf.addPrereq("modules", "gold-electronics")
 else
   rm.ReplaceProportional("speed-module-3", "advanced-circuit", "integrated-circuit", 2)
-  rm.ReplaceProportional("effectivity-module-3", "advanced-circuit", "integrated-circuit", 2)
+  rm.ReplaceProportional("efficiency-module-3", "advanced-circuit", "integrated-circuit", 2)
   rm.ReplaceProportional("productivity-module-3", "advanced-circuit", "integrated-circuit", 2)
 end
 
@@ -186,11 +188,11 @@ rm.RemoveIngredient("roboport", "advanced-circuit", 20)
 rm.ReplaceIngredient("roboport", "cooling-fan", "hv-power-regulator", 5)
 rm.AddIngredient("roboport", "transceiver", 10)
 
-rm.ReplaceProportional("logistic-chest-passive-provider", "electronic-circuit", "transceiver", 1/3)
-rm.ReplaceProportional("logistic-chest-active-provider", "electronic-circuit", "transceiver", 1/3)
-rm.ReplaceProportional("logistic-chest-storage", "electronic-circuit", "transceiver", 1/3)
-rm.ReplaceProportional("logistic-chest-requester", "electronic-circuit", "transceiver", 1/3)
-rm.ReplaceProportional("logistic-chest-buffer", "electronic-circuit", "transceiver", 1/3)
+rm.ReplaceProportional("passive-provider-chest", "electronic-circuit", "transceiver", 1/3)
+rm.ReplaceProportional("active-provider-chest", "electronic-circuit", "transceiver", 1/3)
+rm.ReplaceProportional("storage-chest", "electronic-circuit", "transceiver", 1/3)
+rm.ReplaceProportional("requester-chest", "electronic-circuit", "transceiver", 1/3)
+rm.ReplaceProportional("buffer-chest", "electronic-circuit", "transceiver", 1/3)
 
 if parts.heavyGyro then
   rm.RemoveIngredient("flying-robot-frame", "kr-electronic-components", 9999)
@@ -236,8 +238,8 @@ rm.AddIngredient("battery-equipment", parts.wire, 6)
 tf.addPrereq("battery-mk2-equipment", "high-voltage-equipment")
 rm.AddIngredient("battery-mk2-equipment", "hv-power-regulator", 5)
 
-rm.AddIngredient("fusion-reactor-equipment", "advanced-cable", 100)
-rm.ReplaceIngredient("fusion-reactor-equipment", "processing-unit", "hv-power-regulator", 50)
+rm.AddIngredient("kr-fusion-reactor-equipment", "advanced-cable", 100)
+rm.ReplaceIngredient("kr-fusion-reactor-equipment", "processing-unit", "hv-power-regulator", 50)
 
 rm.AddIngredient("electric-foundry", "hv-power-regulator", 1)
 rm.AddIngredient("electric-foundry", "advanced-cable", 6)

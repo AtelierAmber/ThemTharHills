@@ -6,9 +6,9 @@ local cu = require("category-utils")
 --this gets changed between so do it last instead of in the main krastorio part
 if mods["Krastorio2"] then
   if mods["aai-industry"] then
-    rm.AddProductRaw("sand-from-stone", {type="item", name="potassium-nitrate", amount=1, probability=0.05})
+    rm.AddProductRaw("sand", {type="item", name="potassium-nitrate", amount=1, probability=0.05})
   end
-  rm.AddProductRaw("sand", {type="item", name="potassium-nitrate", amount=1, probability=0.15})
+  rm.AddProductRaw("kr-sand", {type="item", name="potassium-nitrate", amount=1, probability=0.15})
 end
 
 if mods["space-exploration"] then
@@ -19,16 +19,18 @@ if mods["space-exploration"] then
   end
 
   rm.ReplaceProportional("speed-module-3", "advanced-circuit", "integrated-circuit", 2)
-  rm.ReplaceProportional("effectivity-module-3", "advanced-circuit", "integrated-circuit", 2)
+  rm.ReplaceProportional("efficiency-module-3", "advanced-circuit", "integrated-circuit", 2)
   rm.ReplaceProportional("productivity-module-3", "advanced-circuit", "integrated-circuit", 2)
 
-  if rm.CheckIngredient("se-processing-unit-holmium", "silicon") then
+  if rm.CheckIngredient("se-processing-unit-holmium", "kr-silicon") then
+    rm.ReplaceIngredient("se-processing-unit-holmium", "kr-silicon", "integrated-circuit", 10)
+  else if rm.CheckIngredient("se-processing-unit-holmium", "silicon") then
     rm.ReplaceIngredient("se-processing-unit-holmium", "silicon", "integrated-circuit", 5)
   else if rm.CheckIngredient("se-processing-unit-holmium", "silicon-wafer") then
     rm.ReplaceIngredient("se-processing-unit-holmium", "silicon-wafer", "integrated-circuit", 5)
   else
     rm.ReplaceIngredient("se-processing-unit-holmium", "electronic-circuit", "integrated-circuit", 5)
-  end end
+  end end end
 end
 
 if mods["bismuth"] then
@@ -83,7 +85,7 @@ if mods["space-exploration"] then
   cu.moveItem("mainboard", "processor", "a")
   cu.moveRecipe("mainboard", "processor", "a")
   cu.moveRecipe("mainboard-holmium", "processor", "ab")
-  cu.moveItem("ai-core", "processor", "z-011")
+  cu.moveItem("kr-ai-core", "processor", "z-011")
 else
   cu.moveItem("battery", "generic-circuits", "b")
   cu.moveItem("mainboard", "generic-circuits", "i")

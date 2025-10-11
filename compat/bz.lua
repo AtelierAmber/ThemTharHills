@@ -10,7 +10,7 @@ if mods["bzgold"] then
 
   --small amount relative to cost of ICs but idk
   rm.RemoveIngredient("cpu", "silicon-wafer", 10)
-  rm.RemoveIngredient("cpu", "silicon", 5)
+  rm.RemoveIngredient("cpu", "kr-silicon", 5)
 
   if data.raw.item["gimbaled-thruster"] then
     --rcu is getting a bit overcrowded and the temp sensor should be in the part of the rocket that might plausibly overheat anyway

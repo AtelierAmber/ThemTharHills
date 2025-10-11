@@ -7,7 +7,7 @@ if mods["advanced-chemical-plant"] and not mods["Krastorio2"] then
   if not (mods["BrassTacks-Updated"] or mods["IfNickel-Updated"]) then
     rm.AddIngredient("kr-advanced-chemical-plant", "electric-engine-unit", 4) --nobody can escape my insistence on shoving this item in every high end recipe. nobody!
   end
-  rm.ReplaceIngredient("kr-advanced-chemical-plant", "effectivity-module", "hv-power-regulator", 4)
+  rm.ReplaceIngredient("kr-advanced-chemical-plant", "efficiency-module", "hv-power-regulator", 4)
   rm.ReplaceIngredient("kr-advanced-chemical-plant", "speed-module", "integrated-circuit", 32)
 end
 
@@ -32,17 +32,17 @@ if mods["Krastorio2"] then
   rm.ReplaceProportional("kr-tesla-coil", "copper-cable", "advanced-cable", 1/4)
 
   if  not data.raw.item["tracker"] then
-    rm.ReplaceProportional("kr-medium-passive-provider-container", "electronic-circuit", "transceiver", 1/4)
-    rm.ReplaceProportional("kr-medium-active-provider-container", "electronic-circuit", "transceiver", 1/4)
-    rm.ReplaceProportional("kr-medium-requester-container", "electronic-circuit", "transceiver", 1/4)
-    rm.ReplaceProportional("kr-medium-buffer-container", "electronic-circuit", "transceiver", 1/4)
-    rm.ReplaceProportional("kr-medium-storage-container", "electronic-circuit", "transceiver", 1/4)
+    rm.ReplaceProportional("kr-passive-provider-strongbox", "electronic-circuit", "transceiver", 1/4)
+    rm.ReplaceProportional("kr-active-provider-strongbox", "electronic-circuit", "transceiver", 1/4)
+    rm.ReplaceProportional("kr-requester-strongbox", "electronic-circuit", "transceiver", 1/4)
+    rm.ReplaceProportional("kr-buffer-strongbox", "electronic-circuit", "transceiver", 1/4)
+    rm.ReplaceProportional("kr-storage-strongbox", "electronic-circuit", "transceiver", 1/4)
 
-    rm.ReplaceProportional("kr-big-passive-provider-container", "electronic-circuit", "transceiver", 1/5)
-    rm.ReplaceProportional("kr-big-active-provider-container", "electronic-circuit", "transceiver", 1/5)
-    rm.ReplaceProportional("kr-big-requester-container", "electronic-circuit", "transceiver", 1/5)
-    rm.ReplaceProportional("kr-big-buffer-container", "electronic-circuit", "transceiver", 1/5)
-    rm.ReplaceProportional("kr-big-storage-container", "electronic-circuit", "transceiver", 1/5)
+    rm.ReplaceProportional("kr-passive-provider-warehouse", "electronic-circuit", "transceiver", 1/5)
+    rm.ReplaceProportional("kr-active-provider-warehouse", "electronic-circuit", "transceiver", 1/5)
+    rm.ReplaceProportional("kr-requester-warehouse", "electronic-circuit", "transceiver", 1/5)
+    rm.ReplaceProportional("kr-buffer-warehouse", "electronic-circuit", "transceiver", 1/5)
+    rm.ReplaceProportional("kr-storage-warehouse", "electronic-circuit", "transceiver", 1/5)
   end
 
   rm.AddIngredient("kr-advanced-solar-panel", parts.gold, 5)
@@ -67,7 +67,7 @@ if mods["Krastorio2"] then
   tf.addRecipeUnlock("kr-advanced-chemistry", "ammonia-from-potassium-nitrate")
 
   rm.AddIngredient("kr-matter-plant", "advanced-cable", 25)
-  rm.AddIngredient("kr-matter-assembler", "advanced-cable", 25)
+  rm.AddIngredient("kr-matter-associator", "advanced-cable", 25)
   rm.AddIngredient("kr-stabilizer-charging-station", "advanced-cable", 5)
 end
 
