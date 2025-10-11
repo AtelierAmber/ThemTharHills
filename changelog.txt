@@ -1,7 +1,14 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.3
-Date: ????
+Date: 2025-10-11
   Changes:
+    - Corrected dependecies list
+    - Changed name to Them Thar Hills Legacy
+    - Added logging for missing recipes.
+  Bugfixes:
+    - Lots of compatbility fixes for Krastorio 2
+    - Compatibility fixes for Space Ex
+    - Fixed productivity not being usable for recipes
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.2
 Date: 2025-10-07
