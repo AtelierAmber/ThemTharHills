@@ -28,7 +28,7 @@ if mods["space-exploration"] then
     rm.ReplaceIngredient("se-processing-unit-holmium", "silicon-wafer", "integrated-circuit", 5)
   else
     rm.ReplaceIngredient("se-processing-unit-holmium", "electronic-circuit", "integrated-circuit", 5)
-  end end end
+  end end
 end
 
 if mods["bismuth"] then

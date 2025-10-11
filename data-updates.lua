@@ -52,7 +52,7 @@ else if rm.CheckIngredient("processing-unit", "silicon-wafer") then
   rm.ReplaceIngredient("processing-unit", "silicon-wafer", "integrated-circuit", 10)
 else
   rm.ReplaceIngredient("processing-unit", "electronic-circuit", "integrated-circuit", 10)
-end end end
+end end
 
 if rm.CheckIngredient("processing-unit", "mainboard") and not rm.CheckIngredient("mainboard", "temperature-sensor") then -- platinum is off or it's been moved to fans
   rm.RemoveIngredient("processing-unit", "integrated-circuit", 5)
