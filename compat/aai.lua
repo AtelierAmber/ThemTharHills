@@ -20,7 +20,7 @@ end
 
 if mods["space-exploration"] then
 
-  rm.AddProductRaw("se-scrap-recycling", {type="item", name="gold-ore", amount=1, probability=0.01})
+  rm.AddProductRaw("se-scrap-hard-recycling", {type="item", name="gold-ore", amount=1, probability=0.01})
 
   if data.raw.item["nickel-electromagnet"] then
     rm.ReplaceProportional("nickel-electromagnet", "copper-cable", "advanced-cable", 1/4)

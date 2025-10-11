@@ -12,6 +12,7 @@ if mods["bzgold"] then
   rm.RemoveIngredient("cpu", "silicon-wafer", 10)
   rm.RemoveIngredient("cpu", mods["Krastorio2"] and "kr-silicon" or "silicon", 5)
 
+
   if data.raw.item["gimbaled-thruster"] then
     --rcu is getting a bit overcrowded and the temp sensor should be in the part of the rocket that might plausibly overheat anyway
     --rm.RemoveIngredient("rocket-control-unit", "temperature-sensor", 99999)

@@ -82,7 +82,7 @@ data:extend({
     enabled = false,
     energy_required = 2,
     ingredients = tf.compilePrereqs{{type="item", name="electronic-circuit", amount=3}, {type="item", name=parts.wire, amount=5}, 
-      parts.preferred({"quartz", "silica", "iron-stick"}, {1, 1, 1}), parts.preferred({"pcb-solder", "solder"}, {1, 1})},
+      parts.preferred({"kr-quartz", "silica", "iron-stick"}, {1, 1, 1}), parts.preferred({"pcb-solder", "solder"}, {1, 1})},
     results = {{type="item", name="transceiver", amount=1}},
   },
   {
