@@ -8,7 +8,7 @@ if mods["Krastorio2"] then
   if mods["aai-industry"] then
     rm.AddProductRaw("sand-from-stone", {type="item", name="potassium-nitrate", amount=1, probability=0.05})
   end
-  rm.AddProductRaw("sand", {type="item", name="potassium-nitrate", amount=1, probability=0.15})
+  rm.AddProductRaw("kr-sand", {type="item", name="potassium-nitrate", amount=1, probability=0.15})
 end
 
 if mods["space-exploration"] then
@@ -22,8 +22,8 @@ if mods["space-exploration"] then
   rm.ReplaceProportional("effectivity-module-3", "advanced-circuit", "integrated-circuit", 2)
   rm.ReplaceProportional("productivity-module-3", "advanced-circuit", "integrated-circuit", 2)
 
-  if rm.CheckIngredient("se-processing-unit-holmium", "silicon") then
-    rm.ReplaceIngredient("se-processing-unit-holmium", "silicon", "integrated-circuit", 5)
+  if rm.CheckIngredient("se-processing-unit-holmium", mods["Krastorio2"] and "kr-silicon" or "silicon") then
+    rm.ReplaceIngredient("se-processing-unit-holmium", mods["Krastorio2"] and "kr-silicon" or "silicon", "integrated-circuit", 5)
   else if rm.CheckIngredient("se-processing-unit-holmium", "silicon-wafer") then
     rm.ReplaceIngredient("se-processing-unit-holmium", "silicon-wafer", "integrated-circuit", 5)
   else
