@@ -26,7 +26,8 @@
     "? FluidMustFlow",
     "? FreightForwarding",
     "? bismuth",
-    "? LunarLandings"
+    "? LunarLandings",
+    "? 248k"
   ],
   "package": {
     "git_publish_branch": "main",
