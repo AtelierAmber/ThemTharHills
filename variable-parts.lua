@@ -27,7 +27,7 @@ else
   parts.foundryEnabled = false
 end
 
-if mods["248k"] then
+if mods["248k-Redux"] then
   --THE STANDARD DEVICE TO ALWAYS PREFIX IDS IS PESTILENCE. SOMETIMES COLLISIONS ARE DESIRABLE.
   --(generally you want intermediates to collide and entities to be separate but it is often more subtle than that.)
   parts.gold = "fi_materials_gold"

@@ -19,7 +19,7 @@ local function nukeItem(itemname)
 end
 ]]--
 
-if mods["248k"] then
+if mods["248k-Redux"] then
   rm.RemoveIngredient("processing-unit", "fi_materials_gold", 99999)
   rm.RemoveIngredient("processing-unit", "fi_materials_gold", 99999)
   --rm.ReplaceProportional("gr_circuit_recipe", "gr_materials_gold_wire", "gold-wire", 1)
@@ -69,7 +69,8 @@ if mods["248k"] then
     rm.ReplaceProportional("fi_crusher_recipe", "engine-unit", "electric-engine-unit", 0.67)
     rm.ReplaceProportional("fi_fiberer_recipe", "engine-unit", "electric-engine-unit", 0.67)
     rm.ReplaceProportional("fi_compound_machine_recipe", "engine-unit", "electric-engine-unit", 0.67)
-    tf.addPrereq("fi_crusher_tech", "electric-engine-unit")
+    tf.removePrereq("electric-engine", "fi_caster_tech")
+    tf.addPrereq("fi_crusher_tech", "electric-engine")
   end
 
   rm.AddIngredient("fi_fiberer_recipe", "hv-power-regulator", 1)

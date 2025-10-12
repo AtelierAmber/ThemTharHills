@@ -35,7 +35,7 @@ remote.add_interface("ThemTharHills-Milestones", {
         return {
             ["Them Thar Hills"] = {
                 required_mods = {"ThemTharHills-Updated"},
-                forbidden_mods = {"248k"},
+                forbidden_mods = {"248k-Redux"},
                 milestones = {
                     {type="group", name="Resources"},
                     {type="item",  name="gold-plate", quantity=1}

@@ -40,7 +40,7 @@ local function removeProdmodAllowed(recipename)
   end
 end
 
-if mods["248k"] then
+if mods["248k-Redux"] then
   if mods["space-exploration"] then
     removeProdmodAllowed("fu_gold_plate_recipe")
   else
