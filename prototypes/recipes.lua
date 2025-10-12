@@ -126,7 +126,8 @@ if parts.aquaregia then
       energy_required = 1,
       subgroup = "fluid-recipes",
       order = "y04a", --this is where it belongs with se. otherwise it will be moved later.
-      ingredients = tf.compilePrereqs{data.raw["fluid"]["hydrogen-chloride"] and {type="fluid", name="hydrogen-chloride", amount=mods["Krastorio2"] and 100 or 40} or nil, 
+      ingredients = tf.compilePrereqs{data.raw["fluid"]["hydrogen-chloride"] and {type="fluid", name="hydrogen-chloride", amount=100} or nil,
+      data.raw["fluid"]["kr-hydrogen-chloride"] and {type="fluid", name="kr-hydrogen-chloride", amount=100} or nil,
         {type="fluid", name=mods["Krastorio2"] and "kr-nitric-acid" or "nitric-acid", amount=mods["Krastorio2"] and 100 or 160}},
       results = {{type="fluid", name="aqua-regia", amount=200}},
       emissions_multiplier = 0.25,
