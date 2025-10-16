@@ -13,10 +13,10 @@ data:extend({
     icon_size = 64, icon_mipmaps = 4,
     pictures =
         {
-          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore.png",   scale = 0.25, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore-1.png", scale = 0.25, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore-2.png", scale = 0.25, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore-3.png", scale = 0.25, mipmap_count = 4 }
+          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore.png",   scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore-1.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore-2.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHills-Updated__/graphics/icons/gold-ore-3.png", scale = 0.5, mipmap_count = 4 }
         },
     subgroup = "raw-resource",
     order = "j",
