@@ -141,7 +141,7 @@ if parts.aquaregia then
   })
 end
 
-if mods["bzgold"] and data.raw.item["silver-plate"] and rm.CheckIngredient("integrated-circuit", "copper-plate") then
+if parts.bz.gold and data.raw.item["silver-plate"] and rm.CheckIngredient("integrated-circuit", "copper-plate") then
   data:extend({
     {
       type = "recipe",

@@ -12,7 +12,7 @@ if mods["Krastorio2"] then
 end
 
 if mods["space-exploration"] then
-  if mods["bzgold"] then
+  if parts.bz.gold then
     rm.AddProductRaw("se-core-fragment-omni", {type="item", name="gold-ore", amount=1})
   else
     rm.RemoveProduct("se-core-fragment-omni", "gold-ore", 5)
@@ -54,7 +54,7 @@ if mods["Krastorio2"] then
   tf.removeRecipeUnlock("kr-enriched-ores", "enriched-gold-ingot")
 end
 
-if mods["bzgold"] and mods["space-exploration"] then
+if parts.bz.gold and mods["space-exploration"] then
   rm.ReplaceProportional("speed-module-5", "gold-ingot", parts.gold, 1)
   rm.ReplaceProportional("se-heavy-bearing", "gold-ingot", parts.gold, 1)
   rm.ReplaceProportional("cpu-holmium", "gold-ingot", parts.gold, 1)
@@ -105,7 +105,7 @@ cu.moveItem("integrated-circuit", "generic-circuits", "h")
   cu.moveRecipe("solder", "generic-circuits", "a")
   cu.moveRecipe("silicon-wafer", "generic-circuits", "g")
 
-if mods["Krastorio2"] or mods["bzgold"] or mods["bzchlorine"] then
+if mods["Krastorio2"] or parts.bz.gold or parts.bz.chlorine then
   cu.moveItem("solder", "fiddly-electrical-gubbins", "a")
   cu.moveItem("pcb-solder", "fiddly-electrical-gubbins", "ab")
   cu.moveItem("battery", "fiddly-electrical-gubbins", "c")

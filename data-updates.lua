@@ -3,16 +3,16 @@ local tf = require("techfuncs")
 local rm = require("recipe-modify")
 
 tf.addPrereq("advanced-circuit", "gold-electronics")
-if mods["bzchlorine"] then
+if parts.bz.chlorine then
   local gold_mult = 2
-  if mods["bzgold"] and mods["space-exploration"] then
+  if parts.bz.gold and mods["space-exploration"] then
     gold_mult = 1
   end
   rm.ReplaceIngredient("pcb", "copper-plate", parts.gold, gold_mult)
   rm.ReplaceProportional("advanced-circuit", "copper-cable", parts.wire, gold_mult)
 else
   local gold_mult = 1
-  if mods["bzgold"] and mods["space-exploration"] then
+  if parts.bz.gold and mods["space-exploration"] then
     gold_mult = 1/2
   end
   rm.ReplaceProportional("advanced-circuit", "copper-cable", parts.wire, gold_mult)
@@ -24,7 +24,7 @@ if data.raw.item["pcb-solder"] then
 end
 
 if data.raw.fluid["hydrogen-chloride"] and not parts.aquaregia then
-  if (mods["Krastorio2"] and mods["bztungsten"] and mods["BrimStuff-Updated"] and mods["FreightForwarding"]) then
+  if (mods["Krastorio2"] and parts.bz.tungsten and mods["BrimStuff-Updated"] and mods["FreightForwarding"]) then
     rm.SetCategory("gold-powder", "basic-chemistry")
     rm.SetCategory("trace-gold-from-copper", "basic-chemistry")
   else
@@ -35,12 +35,12 @@ if data.raw.fluid["hydrogen-chloride"] and not parts.aquaregia then
   end
 end
 
-if mods["Krastorio2"] and not mods["bzchlorine"] and (rm.CheckIngredient("gold-powder", "aqua-regia") or rm.CheckIngredient("gold-powder", "kr-hydrogen-chloride")) then
+if mods["Krastorio2"] and not parts.bz.chlorine and (rm.CheckIngredient("gold-powder", "aqua-regia") or rm.CheckIngredient("gold-powder", "kr-hydrogen-chloride")) then
   tf.removeRecipeUnlock("kr-advanced-chemistry", "kr-hydrogen-chloride")
   tf.addRecipeUnlock("kr-fluids-chemistry", "kr-hydrogen-chloride")
 end
 
-if (mods["Krastorio2"] and mods["bztungsten"] and mods["FreightForwarding"]) and not (mods["BrimStuff-Updated"] or mods["bzgas"]) then
+if (mods["Krastorio2"] and parts.bz.tungsten and mods["FreightForwarding"]) and not (mods["BrimStuff-Updated"] or parts.bz.gas) then
   rm.RemoveIngredient("chemical-plant", "tungsten-plate", 99999)
   rm.RemoveIngredient("chemical-plant", "copper-tungsten", 99999)
   rm.RemoveIngredient("chemical-plant", "tungsten-carbide", 99999)
@@ -78,7 +78,7 @@ else
 end
 
 tf.addRecipeUnlock("processing-unit", "integrated-circuit")
-if mods["bzgold"] and data.raw.recipe["integrated-circuit-silver"] then
+if parts.bz.gold and data.raw.recipe["integrated-circuit-silver"] then
   tf.addRecipeUnlock("processing-unit", "integrated-circuit-silver")
 end
 
@@ -136,7 +136,7 @@ else
   rm.AddIngredient("train-stop", "transceiver", 1)
 end
 
-if mods["space-exploration"] and mods["bzgold"] then
+if mods["space-exploration"] and parts.bz.gold then
   rm.AddIngredient("accumulator", parts.wire, 1)
 else
   if rm.CheckIngredient("accumulator", "bakelite") then

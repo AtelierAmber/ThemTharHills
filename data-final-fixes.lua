@@ -1,5 +1,6 @@
 local rm = require("recipe-modify")
 local tf = require("techfuncs")
+local parts = require("variable-parts")
 
 local allowed_recipes = {
   mods["Krastorio2"] and "nitric-acid-early" or "nitric-acid",
@@ -44,7 +45,7 @@ if mods["248k-Redux"] then
   if mods["space-exploration"] then
     removeProdmodAllowed("fu_gold_plate_recipe")
   else
-    if mods["bzgold"] then
+    if parts.bz.gold then
       removeProdmodAllowed("fu_gold_ingot_recipe")
       removeProdmodAllowed("fu_gold_plate_recipe")
     end

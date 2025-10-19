@@ -26,7 +26,7 @@ if mods["248k-Redux"] then
   --rm.ReplaceProportional("gr_plasma_cube_recipe", "fi_materials_gold", "gold-plate", 1)
 
   --this conserves acid instead of gold
-  if mods["bzgold"] then
+  if parts.bz.gold then
     rm.AddIngredient("fi_pure_gold_recipe", "gold-ore", 2)
   else
     rm.AddIngredient("fi_pure_gold_recipe", "gold-ore", 6)
@@ -51,7 +51,7 @@ if mods["248k-Redux"] then
     tf.removeRecipeUnlock("fu_gold_ingot_tech", "fu_gold_plate_recipe")
     --nukeItem("fu_materials_gold_ingot")
   else
-    if mods["bzgold"] then
+    if parts.bz.gold then
       --I want that tech obliterated
       --data.raw.technology["fu_gold_ingot_tech"] = nil
       --data.raw.recipe["fu_gold_ingot_recipe"] = nil

@@ -3,7 +3,7 @@ local tf = require("techfuncs")
 local rm = require("recipe-modify")
 local cu = require("category-utils")
 
-if mods["bzgold"] then
+if parts.bz.gold then
   rm.RemoveIngredient("satellite", "gold-ingot", 99999)
   rm.ReplaceProportional("cpu", "gold-ingot", parts.gold, 1)
   rm.ReplaceProportional("mainboard", "gold-ingot", parts.gold, 1)
@@ -65,6 +65,6 @@ if mods["bzgold"] then
   end
 end
 
-if mods["bzaluminum"] then
+if parts.bz.aluminum then
   tf.addPrereq("high-voltage-equipment", "reinforced-cable")
 end
