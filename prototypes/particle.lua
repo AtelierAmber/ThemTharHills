@@ -11,39 +11,23 @@ local function createOreParticle(ore, path, variants)
     table.insert(particle.pictures,
     {
         --so long as the files are copied from vanilla and mass-renamed with the ore name changed this pattern should hold
-        filename = path .. "/" .. ore .. "-particle-" .. count .. ".png",
+        filename = path .. "/hr-" .. ore .. "-particle-" .. count .. ".png",
         priority = "extra-high",
-        width = 16,
-        height = 16,
+        width = 32,
+        height = 32,
         frame_count = 1,
-        hr_version =
-        {
-          filename = path .. "/hr-" .. ore .. "-particle-" .. count .. ".png",
-          priority = "extra-high",
-          width = 32,
-          height = 32,
-          frame_count = 1,
-          scale = 0.5
-        }
+        scale = 0.5
       })
   end
   for count = 1,variants,1 do
     table.insert(particle.shadows,
     {
-        filename = path .. "/" .. ore .. "-particle-shadow-" .. count .. ".png",
+        filename = path .. "/hr-" .. ore .. "-particle-shadow-" .. count .. ".png",
         priority = "extra-high",
-        width = 16,
-        height = 16,
+        width = 32,
+        height = 32,
         frame_count = 1,
-        hr_version =
-        {
-          filename = path .. "/hr-" .. ore .. "-particle-shadow-" .. count .. ".png",
-          priority = "extra-high",
-          width = 32,
-          height = 32,
-          frame_count = 1,
-          scale = 0.5
-        }
+        scale = 0.5
       })
   end
   return particle

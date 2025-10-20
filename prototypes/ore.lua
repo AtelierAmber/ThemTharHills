@@ -50,20 +50,12 @@ data:extend({
     {
       sheet =
       {
-        filename = "__ThemTharHills-Updated__/graphics/ore/gold-ore.png",
+        filename = "__ThemTharHills-Updated__/graphics/ore/hr-gold-ore.png",
         priority = "extra-high",
-        size = 64,
+        size = 128,
         frame_count = 8,
         variation_count = 8,
-        hr_version =
-        {
-          filename = "__ThemTharHills-Updated__/graphics/ore/hr-gold-ore.png",
-          priority = "extra-high",
-          size = 128,
-          frame_count = 8,
-          variation_count = 8,
-          scale = 0.5
-        }
+        scale = 0.5
       }
     },
     mining_visualisation_tint = {1, 0.9, 0}
@@ -106,20 +98,12 @@ if mods["LunarLandings"] and not mods["BrassTacks-Updated"] then
       {
         sheet =
         {
-          filename = "__ThemTharHills-Updated__/graphics/ore/cheese-ore.png",
+          filename = "__ThemTharHills-Updated__/graphics/ore/hr-cheese-ore.png",
           priority = "extra-high",
-          size = 64,
+          size = 128,
           frame_count = 8,
           variation_count = 8,
-          hr_version =
-          {
-            filename = "__ThemTharHills-Updated__/graphics/ore/hr-cheese-ore.png",
-            priority = "extra-high",
-            size = 128,
-            frame_count = 8,
-            variation_count = 8,
-            scale = 0.5
-          }
+          scale = 0.5
         }
       },
       map_color = {1, 0.8, 0},
