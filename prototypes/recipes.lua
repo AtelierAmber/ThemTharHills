@@ -152,7 +152,7 @@ if parts.bz.gold and data.raw.item["silver-plate"] and rm.CheckIngredient("integ
           icon_size = 64
         },
         {
-          icon = "__bzgold__/graphics/icons/silver-plate.png",
+          icon = "__bzgold" .. (mods["bzgold2"] and "2" or "") .. "__/graphics/icons/silver-plate.png",
           icon_size = 128,
           scale = 0.125,
           shift = {8, -8}
