@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.7
-Date: ????
-  Changes:
+Date: 2025-10-20
+  Bugfixes:
+    - Fixed path references when BZ 2.0 mod forks are used
+    - Fixed high res graphics not being used for some prototypes
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.6
 Date: 2025-10-19
