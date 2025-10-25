@@ -288,16 +288,16 @@ if mods["Krastorio2"] then
     material = {type = "item", name = "gold-ore", amount=10},
     matter_count = 5,
     energy_required = 1,
-    need_stabilizer = false,
-    unlocked_by_technology = "kr-matter-gold-processing"
+    needs_stabilizer = false,
+    unlocked_by = "kr-matter-gold-processing"
   })
   matterutil.make_deconversion_recipe({
     material = {type="item", name=parts.gold, amount=10},
     matter_count = mods["space-exploration"] and 11.25 or 15,
     energy_required = 3,
     only_deconversion = true,
-    need_stabilizer = true,
-    unlocked_by_technology = "kr-matter-gold-processing"
+    needs_stabilizer = true,
+    unlocked_by = "kr-matter-gold-processing"
   })
 else
   data:extend({
