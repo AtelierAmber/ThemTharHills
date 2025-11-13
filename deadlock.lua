@@ -1,6 +1,6 @@
 local parts = require("variable-parts")
 
-if deadlock then
+if deadlock and deadlock.add_stack then
   deadlock.add_stack("gold-ore", "__ThemTharHills-Updated__/graphics/icons/stacking/gold-ore-stacked.png", "deadlock-stacking-1", 64)
   deadlock.add_stack(parts.gold, "__ThemTharHills-Updated__/graphics/icons/stacking/gold-plate-stacked.png", "deadlock-stacking-1", 64)
   deadlock.add_stack("gold-powder", "__ThemTharHills-Updated__/graphics/icons/stacking/gold-powder-stacked.png", "deadlock-stacking-1", 64)
@@ -16,7 +16,7 @@ if deadlock then
   data.raw.item["deadlock-stack-gold-powder"].ib_badge = "Au"
 end
 
-if deadlock_crating then
+if deadlock and deadlock.add_crate then
   deadlock_crating.add_crate("gold-ore", "deadlock-crating-1")
   deadlock_crating.add_crate(parts.gold, "deadlock-crating-1")
   deadlock_crating.add_crate("gold-powder", "deadlock-crating-1")
