@@ -20,7 +20,7 @@ end
 
 if mods["space-exploration"] then
 
-  rm.AddProductRaw("se-scrap-hard-recycling", {type="item", name="gold-ore", amount=1, probability=0.01})
+  rm.AddProductRaw("se-scrap-hard-recycling", {type="item", name="gold-ore", amount=1, independent_probability=0.01})
 
   if data.raw.item["nickel-electromagnet"] then
     rm.ReplaceProportional("nickel-electromagnet", "copper-cable", "advanced-cable", 1/4)
@@ -42,9 +42,12 @@ if mods["space-exploration"] then
   if settings.startup["themtharhills-se-maintenance"].value and ((not mods["IfNickel-Updated"]) or (mods["IfNickel-Updated"] and not (data.raw.item["nickel-electromagnet"] and settings.startup["ifnickel-se-maintenance"].value))) then
     local function add_catalyst(recipe, ingredient, amount, losschance, scrap, scrap_amount)
       rm.AddIngredient(recipe, ingredient, amount)
-      rm.AddProductRaw(recipe, {type="item", name=ingredient, amount=amount, probability=1.0 - losschance, ignored_by_productivity=amount, ignored_by_stats=amount})
       if scrap then
-        rm.AddProductRaw(recipe, {type="item", name=scrap, amount=scrap_amount, probability=losschance})
+        local chance = 1.0 - losschance
+        rm.AddProductRaw(recipe, {type="item", name=ingredient, amount=amount, shared_probability = {min = 0, max = chance}, ignored_by_productivity=amount, ignored_by_stats=amount})
+        rm.AddProductRaw(recipe, {type="item", name=scrap, amount=scrap_amount, shared_probability = {min = chance, max = 1}})
+      else
+        rm.AddProductRaw(recipe, {type="item", name=ingredient, amount=amount, independent_probability=1.0 - losschance, ignored_by_productivity=amount, ignored_by_stats=amount})
       end
     end
     -- Research. 25% magnet fail chance
@@ -135,7 +138,7 @@ if mods["space-exploration"] then
           icon_size = 64, icon_mipmaps = 4, scale = 0.25
         }
       },
-      category = "hard-recycling",
+      categories = {"hard-recycling"},
       energy_required = 1,
       ingredients = {{type="item", name="gold-ore", amount=50}},
       results = {{type="item", name="landfill", amount=1}},
